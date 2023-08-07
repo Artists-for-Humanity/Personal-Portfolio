@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.44rem;
+    padding: 0 12%;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-family: Verdana, sans-serif;
+    font-size: 25px;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.empty {
+    color: white;
+    text-shadow: 0px 0px 0px white;
+}
+
+#jacky {
+    color: black;
+    text-align: right !important;
+}
+
+#li {
+    color: black;
+    text-align: left !important;
+}
+
+nav a {
+    padding: 5px;
+    text-shadow: 1px 1px 1px rgb(230, 209, 209);
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.25);
+    text-align: center;
+    margin: 0px 25px;
+} 
+
+nav td {
+    padding: 10px;
+    text-shadow: 1px 1px 1px rgb(230, 209, 209);
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.25);
+    text-align: center;
+    margin: 0px 25px;
+}
+
+#navHome:hover, #navContact:hover, #navAbout:hover {
+    color: black;
+}
+
+#navHome, #navContact, #navAbout {
+    transition: color 0.15s;
+}
+
+.current {
+    color: black;
+    text-decoration-line: underline;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    position: static;
+    background-color:#f8c2a6;;
+}  
+
+footer section {
+    margin: 0 auto;
+    width: 361px;
+    height: 109px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 4.5px 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn img {
+    width: 50px;
+    height: 50px;
+    transition: width 0.15s, height 0.15s;
+}
+
+.btn img:hover {
+    width: 60px;
+    height: 60px;
+}

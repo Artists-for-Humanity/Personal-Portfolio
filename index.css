@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+/* banner */
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    background: url(./banner.jpeg) center center no-repeat;
+    background-size: cover;
+    color: #ffb78c;
+}
+  
+#learnMore {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: black;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #F8C2A6;
+    font-family: Verdana, sans-serif;
+    font-weight: light;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: font-size 0.15s;
+}
+
+#learnMore:hover {
+    font-size: 1.3rem;
+}
+  
+.banner h1 {
+    padding-top: 1.11rem;
+    font-size: 11rem;
+    text-shadow: 1px 1px 2px black;
+    font-family: Merriweather, serif;
+}
+
+
+/* main */
+#grad {
+    background-image: linear-gradient(#e8d8d8 , #f8c2a6);
+    min-height: 1500px;
+}
+
+.photo {
+    border-radius: 10px;
+    border: 15px solid white;
+    position: relative;
+    width: 500px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: width 0.15s;
+}   
+
+.photo:hover {
+    width: 525px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    border: 10px solid white;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    padding: 100px;
+    font-size: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#photoOne {
+    float: right;
+    right: 250px;
+    bottom: 100px;
+}
+
+#containerOne {
+    float: right;
+    top: 50px;
+    right: 500px;
+}
+
+#photoTwo {
+    float: left;
+    left: 250px;
+    top: 700px;
+}
+
+#containerTwo {
+    float: left;
+    top: 300px;
+    left: 500px;
+}
