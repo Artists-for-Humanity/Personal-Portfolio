@@ -7,52 +7,50 @@
     background-image: linear-gradient(#e8d8d8 , #f8c2a6);
 }
 
-.photo {
-    border-radius: 10px;
-    border: 15px solid white;
-    position: relative;
-    width: 500px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    transition: width 0.15s, height 0.15s;
-}
-
-.container {
-    background-color: white;
-    border-radius: 10px;
-    border: 10px solid white;
-    position: relative;
-    width: 500px;
-    height: 500px;
-    padding: 100px;
-    font-size: 20px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
 #bioPhoto {
     border-radius: 10px;
     border: 15px solid white;
     position: relative;
-    width: 500px;
+    width: 26.04166vw;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     float: right;
-    right: 250px;
-    top: 125px;
+    right: 13.02vw;
+    top: 11.574vh;
 }
 
-#bioDescription {
+.bioDescription {
     background-color: white;
     border-radius: 10px;
     border: 10px solid white;
     position: relative;
-    padding: 100px;
-    width: 750px;
-    height: 500px;
+    padding: 4.6295vh 2.60415vw;
+    width: 39.0625vw;
+    height: 46.29vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 2vh;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     float: right;
-    top: 225px;
-    right: 500px;
+    top: 20.83333vh;
+    right: 26.04166vw;
+}
+
+#spacer {
+    width: 50vw;
+}
+
+#quote {
+    font-family: 'Edu SA Beginner', cursive;
+    font-size: 2vh;
+    margin: 15px;
+}
+
+#quoteContainer {
+    text-align: right;
+}
+
+.quote {
+    font-size: 3.5vh !important;
+    font-family: 'Times New Roman', Times, serif !important;
 }

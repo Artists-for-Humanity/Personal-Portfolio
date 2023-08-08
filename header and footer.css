@@ -7,48 +7,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4.44rem;
-    padding: 0 12%;
+    height: 6.5777vh;
+    padding: 0 12vw;
     background-color: white;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     font-family: Verdana, sans-serif;
-    font-size: 25px;
+    font-size: 2.5vh;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     z-index: 5;
 }
 
-.empty {
-    color: white;
-    text-shadow: 0px 0px 0px white;
-}
-
-#jacky {
-    color: black;
-    text-align: right !important;
-}
-
-#li {
-    color: black;
-    text-align: left !important;
-}
-
 nav a {
-    padding: 5px;
+    padding: 0.46vh 0.26vw;
     text-shadow: 1px 1px 1px rgb(230, 209, 209);
     text-decoration: none;
     color: rgba(0, 0, 0, 0.25);
     text-align: center;
-    margin: 0px 25px;
-} 
-
-nav td {
-    padding: 10px;
-    text-shadow: 1px 1px 1px rgb(230, 209, 209);
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.25);
-    text-align: center;
-    margin: 0px 25px;
+    margin: 0px 1.30vw;
 }
 
 #navHome:hover, #navContact:hover, #navAbout:hover {
@@ -68,6 +44,7 @@ nav td {
 footer {
     width: 100%;
     text-align: center;
+    height: 15vh;
     bottom: 0;
     position: static;
     background-color:#f8c2a6;;
@@ -75,8 +52,8 @@ footer {
 
 footer section {
     margin: 0 auto;
-    width: 361px;
-    height: 109px;
+    width: 18.802vw;
+    height: 10.09vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,22 +67,22 @@ footer section {
     background-color: black;
     border: none;
     color: white;
-    padding: 4.5px 6px;
-    font-size: 16px;
+    padding: 0.4166vh 0.3125vw;
+    font-size: 1.4814vh;
     cursor: pointer;
-    margin: 5px 10px;
+    margin: 0.462vh 0.520vw;
     border-radius: 5px;
     text-decoration: none;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .btn img {
-    width: 50px;
-    height: 50px;
+    width: 2.6041vw;
+    height: 4.629vh;
     transition: width 0.15s, height 0.15s;
 }
 
 .btn img:hover {
-    width: 60px;
-    height: 60px;
+    width: 3.125vw;
+    height: 5.555vh;
 }

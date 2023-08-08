@@ -10,62 +10,54 @@
     <body>
         <header>
             <nav class="header">
-                <table>
-                    <tr>
-                        <td id="jacky">Jacky</td>
-                        <td id="li">Li</td>
-                        <td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td>
-                        <td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td>
-                        <td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td><td class="empty">a</td>
-                        <td><a id="navHome" href="../index.html">Home</a></td>
-                        <td><a id="navAbout" class="current" href="../about.html">About</a></td>
-                        <td><a id="navContact" href="">Contact</a></td>
-                        <td class="empty">a</td>
-                    </tr>
-                </table>
+                <a id="navHome" href="../index.html">Home</a>
+                <a id="navAbout" href="../about.html">About</a>
+                <a id="navContact" href="../resume.html">Resume</a>
             </nav>
         </header>
-        <section>
-            <br>a<br>b<br>a<br><br>aaa<br><br>
-            <h1>Match The Color!</h1> 
-            <div id="themeContainer">
-                <label for="mode" id="themeLabel">Choose theme:</label>
-                <input name ="mode" type="radio" id="darkMode" checked>Dark Mode</input>
-                <input name ="mode" type="radio" id="lightMode">Light Mode</input>
+        <main>
+            <section>
+                <br><br><br><br><br>
+                <h1>Match The Color!</h1> 
+                <div id="themeContainer">
+                    <label for="mode" id="themeLabel">Choose theme:</label>
+                    <input name ="mode" type="radio" id="darkMode" checked>Dark Mode</input>
+                    <input name ="mode" type="radio" id="lightMode">Light Mode</input>
+                </div>
+                <h2>How To Play: 
+                    <span id="howToPlay"> You will be given a <strong>random</strong> color, <strong>move</strong> the sliders to <strong>match</strong> the given color. <strong>Submit</strong> when you're done! <br>
+                        <span id="easyText">Easy: Slider increments by 15, need <strong>90% correct</strong> to win.</span>
+                        <span id="mediumText">Medium: Need <strong>95% correct</strong> to win.</span>
+                        <span id="hardText">Hard: <strong>99% correct</strong> to win.</span>
+                    </span>
+                </h2>
+                <br>
+                <div class="buttonContainer">
+                    <p id="easyButton">Easy</p>
+                    <p id="mediumButton">Medium</p>
+                    <p id="hardButton">Hard</p>
+                </div>
+                <p id="startButton">Start!</p>
+                <div class="colorsContainer">
+                    <div id="docColor"></div>
+                    <div id="userColor"></div>
+                </div>
+            </section>
+            <div class="slideContainer">
+                <input name="red" type="range" min="0" max="255" value="0" class="slider" id="red">
             </div>
-            <h2>How To Play: 
-                <span id="howToPlay"> You will be given a <strong>random</strong> color, <strong>move</strong> the sliders to <strong>match</strong> the given color. <strong>Submit</strong> when you're done! <br>
-                    <span id="easyText">Easy: Slider increments by 15, need <strong>90% correct</strong> to win.</span>
-                    <span id="mediumText">Medium: Need <strong>95% correct</strong> to win.</span>
-                    <span id="hardText">Hard: <strong>99% correct</strong> to win.</span>
-                </span>
-            </h2>
-            <br>
-            <div class="buttonContainer">
-                <p id="easyButton">Easy</p>
-                <p id="mediumButton">Medium</p>
-                <p id="hardButton">Hard</p>
+            <div class="slideContainer">
+                <input name="green" type="range" min="0" max="255" value="0" class="slider" id="green">
             </div>
-            <p id="startButton">Start!</p>
-            <div class="colorsContainer">
-                <div id="docColor"></div>
-                <div id="userColor"></div>
+            <div class="slideContainer">
+                <input name="blue" type="range" min="0" max="255" value="0" class="slider" id="blue">
             </div>
-        </section>
-        <div class="slideContainer">
-            <input name="red" type="range" min="0" max="255" value="0" class="slider" id="red">
-        </div>
-        <div class="slideContainer">
-            <input name="green" type="range" min="0" max="255" value="0" class="slider" id="green">
-        </div>
-        <div class="slideContainer">
-            <input name="blue" type="range" min="0" max="255" value="0" class="slider" id="blue">
-        </div>
-        <div class="submitContainer">
-            <a id="submitButton">SUBMIT!</a>
-            <a id="retryButton">Try again?</a>
-            <a id="difficultyButton">Change Difficulty?</a>
-        </div>
+            <div class="submitContainer">
+                <a id="submitButton">SUBMIT!</a>
+                <a id="retryButton">Try again?</a>
+                <a id="difficultyButton">Change Difficulty?</a>
+            </div>
+        </main>
     </body>
     <footer id="footer">
         <br><br>

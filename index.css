@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50rem;
+    height: 75vh;
     background: url(./images/banner.jpeg) center center no-repeat;
     background-size: cover;
     color: #ffb78c;
@@ -43,20 +43,20 @@
 /* main */
 #grad {
     background-image: linear-gradient(#e8d8d8 , #f8c2a6);
-    min-height: 1500px;
+    height: 160vh;
 }
 
 .photo {
     border-radius: 10px;
     border: 15px solid white;
     position: relative;
-    width: 500px;
+    width: 26vw;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     transition: width 0.15s;
 }   
 
 .photo:hover {
-    width: 525px;
+    width: 27vw;
 }
 
 .container {
@@ -64,10 +64,9 @@
     border-radius: 10px;
     border: 10px solid white;
     position: relative;
-    width: 500px;
-    height: 500px;
-    padding: 100px;
-    font-size: 20px;
+    width: 26vw;
+    height: 46vh;
+    padding: 9.259vh 5.2083vw;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: center;
@@ -78,36 +77,36 @@
 
 .container h1 {
     font-family: Merriweather, serif;
-    font-size: 2rem;
-    margin-bottom: 25px;
+    font-size: 2.96296296vh;
+    margin-bottom: 2.314vh;
 }
 
 .container p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1rem;
-    line-height: 1.25rem;
+    font-size: 1.48148148vh;
+    line-height: 1.85185185vh;
 }
 
 #photoOne {
     float: right;
-    right: 250px;
-    bottom: 100px;
+    right: 13.02vw;
+    bottom: 9.25vh;
 }
 
 #containerOne {
     float: right;
-    top: 50px;
-    right: 500px;
+    top: 5vh;
+    right: 26vw;
 }
 
 #photoTwo {
     float: left;
-    left: 250px;
-    top: 700px;
+    left: 13vw;
+    top: 70vh;
 }
 
 #containerTwo {
     float: left;
-    top: 300px;
-    left: 500px;
+    top: 40vh;
+    left: 26vw;
 }
