@@ -70,7 +70,7 @@ function endGame() {
             retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. Click this button to try again?`;
         }
     } else {
-        if (gameValues.red === rightValues.red && gameValues.blue === rightValues.blue && gameValues.green === rightValues.green) {
+        if (percentOff >= 99) {
             retryButton.innerHTML = 'YOU <strong>WIN</strong>! You were 100% correct! Impressive. Click this button to try again?';
         } else {
             retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. Click this button to try again?`;

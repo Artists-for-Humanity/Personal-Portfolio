@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     height: 50rem;
-    background: url(./banner.jpeg) center center no-repeat;
+    background: url(./images/banner.jpeg) center center no-repeat;
     background-size: cover;
     color: #ffb78c;
 }
@@ -69,6 +69,23 @@
     padding: 100px;
     font-size: 20px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container h1 {
+    font-family: Merriweather, serif;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.container p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
 }
 
 #photoOne {
