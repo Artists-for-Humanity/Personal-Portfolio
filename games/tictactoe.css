@@ -1,13 +1,13 @@
 /* main */
 * {
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #grad {
     background: black;
     transition: background 0.5s;
-    height: 85vh;
+    height: 90vh;
 }
 
 h1, p {
@@ -151,21 +151,21 @@ td {
 }
 
 #computerText {
-    font-size: 0.9rem;
+    font-size: 1.23rem;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: 3px solid red;
+    border-bottom: 3px solid red;
   }
 
 .animation {
     animation: 
-        typing 2s steps(40, end),
+        typing 2.5s steps(100, end),
         blink-caret .75s step-end infinite;
 }
 
 /* The typing effect */
   @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from { height: 0 }
+    to { height: 100% }
 }
   
 /* The typewriter cursor effect */

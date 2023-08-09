@@ -46,30 +46,31 @@ const currentEvent = {
 };
 
 const quotes = [
-    "Better by far you should forget and smile Than that you should remember and be sad.",
-    "Can I see another's woe, And not be in sorrow too? Can I see another's grief, And not seek for kind relief?",
+    "Better by far you should forget and smile...Than that you should remember and be sad.",
     "Do not stand at my grave and cry; I am not there. I did not die.",
-    "Don't hate the player hate the game.",
-    "I feel your pain the pain in knowing this has Happened to you. The pain in knowing what more tears we have gained. But through all this I feel your pain",
-    "If you try to please audiences, uncritically accepting their tastes, it can only mean that you have no respect for them",
+    "Don't hate the player, hate the game.",
     "I feel within me a peace above all earthly dignities, a still and quiet conscience.",
-    "In the end… We only regret the chances we didn't take",
-    "Laugh, and the world laughs with you; Weep, and you weep alone; For the sad old earth must borrow its mirth, But has trouble enough of its own.",
-    "LIFE is a mosaic of pleasure and pain",
+    "In the end… We only regret the chances we didn't take.",
+    "LIFE is a mosaic of pleasure and pain.",
     "Of all sad words of tongue or pen, the saddest are these, 'It might have been.'",
-    "Oft expectation fails, and most oft there Where most it promises; and oft it hits Where hope is coldest, and despair most fits.",
     "Our doubts are traitors, and make us lose the good we oft might win, by fearing to attempt.",
     "She smiled in defeat, With unconquerable eyes.",
-    "Somethin' filled up My heart with nothin', Someone told me not to cry. Now that I'm older, My heart's colder, And I can see that it's a lie.",
-    "Sorrow is my own yard where the new grass flames as it has flamed often before but not with the cold fire that closes round me this year.",
     "The pain I feel now is the happiness I had before. That's the deal.",
     "There are no regrets in life, just lessons.",
-    "The soul would have no rainbow Had the eyes no tears.",
+    "The soul would have no rainbow, Had the eyes no tears.",
     "This thing we call 'failure' is not the falling down, but the staying down.",
     "To live is to suffer, to survive is to find some meaning in the suffering.",
     "Whenever I play I am followed by a dog called 'Ego'.",
-    "You cannot now believe that you will ever feel better. But this is not true. You are sure to be happy again. Knowing this, truly believing it will make you less miserable now.",
-    "Your failure here is a metaphor. To learn for what, please resume playing."
+    "Your failure here is a metaphor. To learn for what, please resume playing.",
+    "If you want to go far go alone. If you want to go fast, go with friends.",
+    "Stop drifting… sprint to the finish. Write off your hopes, be your own savior while you can.",
+    "Choose old people for enemies. They die. You win.",
+    "No matter how hot your anger may be, it cannot cook.",
+    "A goat's frown cannot stop it from being taken to the market.",
+    "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+    "The more you know, the more you know you don't know.",
+    "Life is really simple, but we insist on making it complicated.",
+    "Love is a serious mental disease."
 ];
 
 
@@ -165,8 +166,8 @@ function tileClick(event) {
             computerTurn();
         }, "3000");
         computerText.classList.toggle('animation');
-        let computerChoice = Math.floor(Math.random()*24);
-        computerText.innerHTML = quotes[computerChoice];
+        let computerChoice = Math.floor(Math.random()*25);
+        computerText.innerHTML = 'KawaiiBot: <br>' + quotes[computerChoice];
     } else {
     };
 };
@@ -351,6 +352,7 @@ function theme() {
         retryButton.style.border = '1px solid black';
         footer.style.backgroundColor = 'white';
         computerText.style.color = 'black';
+        winText.style.color  = 'black';
     } else {
         main.style.background = 'black';
         h1.style.color = 'white';
@@ -364,6 +366,7 @@ function theme() {
         retryButton.style.border = '1px solid white';
         footer.style.backgroundColor = 'black';
         computerText.style.color = 'white';
+        winText.style.color = 'white';
     }
 };
 

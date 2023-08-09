@@ -11,13 +11,26 @@
         <link href="./index.css" type="text/css" rel="stylesheet">
         <title>Jacky Li</title>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Roboto+Slab&family=Vina+Sans&display=swap" rel="stylesheet">
+        <script>
+            window.onscroll = function() {
+                if (document.documentElement.scrollTop > 50) {
+                    document.getElementById('navBar').className = 'header';
+                } else {
+                    document.getElementById('navBar').className = '';
+                }
+            }
+        </script>
     </head>
     <body>
         <header>
-            <nav class="header">
+            <nav id="navBar">
+                <a id="logo" href="./index.html">JHL</a>
+                <a id="navGames">Games</a>
+                <a id="navProjects">Projects</a>
+                <a id="navContact" href="./resume.html">Resume</a>                 
+                <a id="navAbout" href="./about.html">About</a>               
                 <a id="navHome" class="current" href="./index.html">Home</a>
-                <a id="navAbout" href="./about.html">About</a>
-                <a id="navContact" href="./resume.html">Resume</a>
             </nav>
         </header>
         <main>
