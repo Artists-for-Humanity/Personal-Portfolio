@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="./tactactoe.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+        <link href="../header and footer.css" type="text/css" rel="stylesheet">
+        <link href="./tictactoe.css" type="text/css" rel="stylesheet">
+        <link href="../reset.css" type="text/css" rel="stylesheet">
+        <title>Tic Tac Toe! | Jacky Li</title>
+    </head>
+    <body>
+        <header>
+            <nav class="header">
+                <a id="navHome" href="../index.html">Home</a>
+                <a id="navAbout" href="../about.html">About</a>
+                <a id="navContact" href="../resume.html">Resume</a>
+            </nav> 
+        </header>
+        <main id="grad">
+            <section class="everything">
+                <br><br><br><br><br>
+                <h1>Tic Tac Toe!</h1> 
+                <div id="themeContainer">
+                    <label for="mode" id="themeLabel">Choose theme:</label>
+                    <input name ="mode" type="radio" id="darkMode" checked>Dark Mode</input>
+                    <input name ="mode" type="radio" id="lightMode">Light Mode</input>
+                </div>
+                <div class="buttonContainer">
+                    <p id="computerButton">Player vs Computer</p>
+                    <p id="pvpButton">Player vs Player</p>
+                </div>
+                <p id="startButton">Start!</p>
+                <table>
+                    <tr>
+                        <td class="tile tileOne" id="tileOne"></td>
+                        <td class="tile tileTwo" id="tileTwo"></td>
+                        <td class="tile tileThree" id="tileThree"></td>
+                        <td></td>
+                        <td><img id="computerIcon" src="../images/computerIcon.png"></td>
+                    </tr>
+                    <tr>
+                        <td class="tile tileFour" id="tileFour"></td>
+                        <td class="tile tileFive" id="tileFive"></td>
+                        <td class="tile tileSix" id="tileSix"></td>
+                        <td></td>
+                        <td id="textContainer"><p id="computerText"></p></td>
+                    </tr>
+                    <tr>
+                        <td class="tile tileSeven" id="tileSeven"></td>
+                        <td class="tile tileEight" id="tileEight"></td>
+                        <td class="tile tileNine" id="tileNine"></td>
+                        <td></td>
+                        <td id="winText"></td>
+                    </tr>
+                </table>
+                <p id="retryButton">Play again?</p>
+            </section>
+            </main>
+        <footer id="footer">
+            <section>
+                <a class="btn" href="https://www.discordapp.com/users/241937378791522332" target="_blank"><img src="../images/discord.jpeg"></a>
+                <a class="btn" href="mailto:jackymon260@gmail.com" target="_blank"><img src="../images/email.png"></a>
+                <a class="btn" href="https://github.com/ilyKcaj" target="_blank"><img src="../images/github.jpg"></a>
+                <a class="btn" href="https://www.linkedin.com/in/jacky-li-0946a5246/" target="_blank"><img src="../images/linkedin.png"></a>
+            </section>
+            <br><br>
+        </footer>
+    </body>
+</html>

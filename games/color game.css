@@ -2,6 +2,7 @@
 body {
     background: black;
     transition: background 0.5s;
+    height: 100vh;
 }
 
 h1, p {
@@ -144,12 +145,8 @@ section {
     text-decoration: underline;
 }
 
-#startButton:hover, #submitButton:hover, #retryButton:hover, #difficultyButton:hover {
+#startButton:hover, #submitButton:hover, #retryButton:hover, #difficultyButton:hover, #easyButton:hover, #mediumButton:hover, #hardButton:hover {
     opacity: 1;
-    box-shadow: 1px 2px 4px white;
-}
-
-#easyButton:hover, #mediumButton:hover, #hardButton:hover {
     box-shadow: 1px 2px 4px white;
 }
 
@@ -256,6 +253,7 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav {
