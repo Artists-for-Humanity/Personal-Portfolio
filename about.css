@@ -5,6 +5,7 @@
 /* main */
 #grad {
     background-image: linear-gradient(#e8d8d8 , #f8c2a6);
+    height: 85vh;
 }
 
 #bioPhoto {

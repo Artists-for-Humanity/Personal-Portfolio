@@ -16,8 +16,8 @@
 }
   
 #learnMore {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 1.48148148vh 1.6666vw;
+    font-size: 1.777vh;
     color: black;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     background-color: #F8C2A6;
@@ -29,12 +29,12 @@
 }
 
 #learnMore:hover {
-    font-size: 1.3rem;
+    font-size: 2vh;
 }
   
 .banner h1 {
-    padding-top: 1.11rem;
-    font-size: 11rem;
+    padding-top: 1.644444vh;
+    font-size: 16.296vh;
     text-shadow: 1px 1px 2px black;
     font-family: Merriweather, serif;
 }
