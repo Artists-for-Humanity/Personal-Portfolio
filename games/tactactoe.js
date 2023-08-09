@@ -18,7 +18,10 @@ const computerText = document.getElementById('computerText');
 const winText = document.getElementById('winText');
 const htmlTiles = document.getElementsByClassName('tile');
 const tiles = Array.prototype.slice.call(htmlTiles);
-
+const darkMode = document.getElementById('darkMode');
+const lightMode = document.getElementById('lightMode');
+const main = document.querySelector('main');
+const h1 = document.querySelector('h1');
 
 
 /* data objects */
@@ -34,7 +37,8 @@ const settings = {
     tileEight: false,
     tileNine: false,
     winner: '',
-    gameOver: false
+    gameOver: false,
+    theme: ''
 };
 
 const currentEvent = {
@@ -116,15 +120,9 @@ function tileClick(event) {
         currentEvent.tile = 'tileNine';
     };
     if (settings[currentEvent.tile] === false) {
-        tileOne.removeEventListener('click', tileClick);
-        tileTwo.removeEventListener('click', tileClick);
-        tileThree.removeEventListener('click', tileClick);
-        tileFour.removeEventListener('click', tileClick);
-        tileFive.removeEventListener('click', tileClick);
-        tileSix.removeEventListener('click', tileClick);
-        tileSeven.removeEventListener('click', tileClick);
-        tileEight.removeEventListener('click', tileClick);
-        tileNine.removeEventListener('click', tileClick);
+        tiles.forEach((x) => {
+            x.removeEventListener('click', tileClick);
+        })
         if (event.target.classList.contains('tileOne')) {
             tileOne.style.color = 'blue';
             tileOne.innerHTML = 'X';
@@ -258,18 +256,12 @@ function computerTurn() {
                 settings.tileNine = true;
                 break;
         }
-        tileOne.addEventListener('click', tileClick);
-        tileTwo.addEventListener('click', tileClick);
-        tileThree.addEventListener('click', tileClick);
-        tileFour.addEventListener('click', tileClick);
-        tileFive.addEventListener('click', tileClick);
-        tileSix.addEventListener('click', tileClick);
-        tileSeven.addEventListener('click', tileClick);
-        tileEight.addEventListener('click', tileClick);
-        tileNine.addEventListener('click', tileClick);
+        tiles.forEach((x) => {
+            x.addEventListener('click', tileClick);
+        })
+        isGameOver();
     };
     computerText.classList.toggle('animation');
-    isGameOver();
 }
 
 function isGameOver() {
@@ -329,15 +321,9 @@ function isGameOver() {
 
 function gameOver() {
     settings.gameOver = true;
-    tileOne.removeEventListener('click', tileClick);
-    tileTwo.removeEventListener('click', tileClick);
-    tileThree.removeEventListener('click', tileClick);
-    tileFour.removeEventListener('click', tileClick);
-    tileFive.removeEventListener('click', tileClick);
-    tileSix.removeEventListener('click', tileClick);
-    tileSeven.removeEventListener('click', tileClick);
-    tileEight.removeEventListener('click', tileClick);
-    tileNine.removeEventListener('click', tileClick);
+    tiles.forEach((x) => {
+        x.removeEventListener('click', tileClick);
+    })
     if (settings.winner === 'playerOne') {
         winText.innerHTML = "You've won!"
     } else if (settings.winner === 'computer') {
@@ -347,7 +333,38 @@ function gameOver() {
     };
     setTimeout(() => {
         retryButton.style.display = 'inline';
-    }, "2000");
+    }, "3000");
+};
+
+
+function theme() {
+    if (settings.theme === 'light') {
+        main.style.background = 'white';
+        h1.style.color = 'black';
+        themeContainer.style.color = 'black';
+        themeLabel.style.color = 'black';
+        startButton.style.backgroundColor = 'black';
+        startButton.style.color = 'white';
+        startButton.style.border = '1px solid white';
+        retryButton.style.backgroundColor = 'white';
+        retryButton.style.color = 'black';
+        retryButton.style.border = '1px solid black';
+        footer.style.backgroundColor = 'white';
+        computerText.style.color = 'black';
+    } else {
+        main.style.background = 'black';
+        h1.style.color = 'white';
+        themeContainer.style.color = 'white';
+        themeLabel.style.color = 'white';
+        startButton.style.backgroundColor = 'white';
+        startButton.style.color = 'black';
+        startButton.style.border = '1px solid black';
+        retryButton.style.backgroundColor = 'black';
+        retryButton.style.color = 'white';
+        retryButton.style.border = '1px solid white';
+        footer.style.backgroundColor = 'black';
+        computerText.style.color = 'white';
+    }
 };
 
 
@@ -373,3 +390,13 @@ pvpButton.onclick = function() {
 
 startButton.onclick = startGame;
 retryButton.onclick = startGame;
+
+darkMode.oninput = function() {
+    settings.theme = 'dark';
+    theme();
+};
+
+lightMode.oninput = function() {
+    settings.theme = 'light';
+    theme();
+};

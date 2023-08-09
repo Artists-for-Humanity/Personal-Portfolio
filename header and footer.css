@@ -48,6 +48,7 @@ footer {
     bottom: 0;
     position: static;
     background-color:#f8c2a6;;
+    transition: background 0.5s;
 }  
 
 footer section {
