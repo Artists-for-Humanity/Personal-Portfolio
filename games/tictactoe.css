@@ -16,15 +16,15 @@ h1, p {
 }
 
 h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 5.92592vh;
+    margin-bottom: 1.851vh;
 }
 
 #themeContainer {
     color: white;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.851vh;
 }
 
 .everything {
@@ -46,24 +46,24 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin: 4.629vh 2.604vw;
     display: none;
 }
 
 td {
     text-align: center;
     vertical-align: middle;
-    font-size: 150px;
-    width: 150px;
-    height: 150px;
+    font-size: 13.888888vh;
+    width: 7.8125vw;
+    height: 13.888888vh;
 }
 
 #tileOne, #tileTwo, #tileFour, #tileFive, #tileSeven, #tileEight {
-    border-right: 1px solid white;
+    border-right: 0.0520833vw solid white;
 }
 
 #tileOne, #tileTwo, #tileThree, #tileFour, #tileFive, #tileSix {
-    border-bottom: 1px solid white;
+    border-bottom: 0.0925vh solid white;
 }
 
 .tile {
@@ -77,8 +77,8 @@ td {
 
 /* computer */
 #computerIcon {
-    width: 150px;
-    height: 93.75px;
+    width: 7.8125vw;
+    height: 8.68055555vh;
 }
 
 /* buttons */
@@ -89,10 +89,10 @@ td {
 
 #computerButton, #pvpButton {
     text-align: center;
-    width: 150px;
-    height: 150px;
-    padding: 25px;
-    font-size: 20px;
+    width: 7.8125vw;
+    height: 13.8888888vh;
+    padding: 2.3148vh 1.30208333vw;
+    font-size: 1.85185vh;
     color: black;
     background-color: white;
     border: 1px solid black;
@@ -102,16 +102,16 @@ td {
     -webkit-transition: .5s;
     transition: box-shadow .5s;
     transition: opacity .5s;
-    margin: 20px 10px;
+    margin: 1.851851vh 0.520833vw;
     display: none;
 }
 
 #startButton {
     text-align: center;
-    width: 150px;
-    height: 75px;
-    padding: 25px;
-    font-size: 20px;
+    width: 7.8125vw;
+    height: 6.9444444vw;
+    padding: 2.314814vh 1.3020vw;
+    font-size: 1.851851vw;
     color: black;
     background-color: white;
     border: 1px solid black;
@@ -121,7 +121,7 @@ td {
     -webkit-transition: .5s;
     transition: box-shadow .5s;
     transition: opacity .5s;
-    margin: 50px;
+    margin: 4.629vh 2.604166vw;
 }
 
 #startButton:hover, #computerButton:hover, #pvpButton:hover, #retryButton:hover {
@@ -130,10 +130,10 @@ td {
 }
 
 #retryButton {
-    margin: 15px auto;
-    padding: 10px;
+    margin: 1.38888vh auto;
+    padding: 0.925vh 0.5208333vw;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.851851vh;
     width: 30%;
     border: 1px solid white;
     display: none;
@@ -151,9 +151,9 @@ td {
 }
 
 #computerText {
-    font-size: 1.23rem;
+    font-size: 1.82222vh;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-bottom: 3px solid red;
+    border-bottom: 0.27777vh solid red;
   }
 
 .animation {
@@ -175,5 +175,5 @@ td {
 }
 
 #winText {
-    font-size: 1rem;
+    font-size: 1.481481vh;
 }
