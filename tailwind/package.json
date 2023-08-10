@@ -1,0 +1,23 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "Hey! My name is Jacky Li and this is my repository for my personal portfolio website. This website is hard-coded and it only contains HTML, CSS, and JavaScript!",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build input.css -o output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyKcaj/Personal-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilyKcaj/Personal-Portfolio/issues"
+  },
+  "homepage": "https://github.com/ilyKcaj/Personal-Portfolio#readme",
+  "dependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

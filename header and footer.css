@@ -22,9 +22,9 @@ nav {
 
 nav a {
     padding: 0.46vh 0.26vw;
-    text-shadow: 1px 1px 1px rgb(230, 209, 209);
+    opacity: 1;
     text-decoration: none;
-    color: rgba(253, 184, 194, 0.25);
+    color: lightpink;
     text-align: center;
     margin: 0px 1.30vw;
     float: right;
@@ -36,19 +36,32 @@ nav a {
     border: 3px solid lightpink;
     border-radius: 5px;
     font-family: 'Bodoni Moda', serif;
+    transition: opacity 0.15s;
+    opacity: 1;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
 }
 
-#navHome:hover, #navContact:hover, #navAbout:hover/*, #navGames:hover, #navProjects:hover*/ {
+#logo:hover {
+    opacity: 0.5;
+}
+
+#navHome:hover, #navContact:hover, #navAbout:hover, #navGames:hover/*, #navProjects:hover*/ {
     color: lightpink;
+    opacity: 0.5;
+}
+
+#navProjects {
+    opacity: 0.5;
 }
 
 #navHome, #navContact, #navAbout, #navGames, #navProjects {
-    transition: color 0.15s;
+    transition: opacity 0.15s;
 }
 
 .current {
     color: lightpink;
     text-decoration-line: underline;
+    opacity: 1 !important;
 }
 
 /* footer */
