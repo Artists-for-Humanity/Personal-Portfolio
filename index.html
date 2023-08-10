@@ -16,8 +16,10 @@
             window.onscroll = function() {
                 if (document.documentElement.scrollTop > 50) {
                     document.getElementById('navBar').className = 'header';
+                    document.getElementById('footer').className = 'footer';
                 } else {
                     document.getElementById('navBar').className = '';
+                    document.getElementById('footer').className = '';
                 }
             }
         </script>
@@ -71,7 +73,7 @@
             </div>
         </main>
         <footer>
-            <section>
+            <section id="footer">
                 <a class="btn" href="https://www.discordapp.com/users/241937378791522332" target="_blank"><img src="./images/discord.jpeg"></a>
                 <a class="btn" href="mailto:jackymon260@gmail.com" target="_blank"><img src="./images/email.png"></a>
                 <a class="btn" href="https://github.com/ilyKcaj" target="_blank"><img src="./images/github.jpg"></a>

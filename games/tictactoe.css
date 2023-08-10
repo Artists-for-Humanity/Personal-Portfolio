@@ -4,10 +4,9 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#grad {
+html {
     background: black;
     transition: background 0.5s;
-    height: 90vh;
 }
 
 h1, p {
@@ -31,10 +30,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#footer {
-    background-color: black;
 }
 
 /* table grid */

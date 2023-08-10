@@ -278,7 +278,12 @@ table {
   border-spacing: 0;
 }
 
-footer {
-    background-color: black;
+
+/* footer */
+#footer {
     transition: background-color 0.5s;
 }  
+
+#footerSection {
+    bottom: 50%;
+}

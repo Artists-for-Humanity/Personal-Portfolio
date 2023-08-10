@@ -52,27 +52,29 @@ nav a {
 }
 
 /* footer */
-footer {
-    width: 100%;
-    text-align: center;
-    height: 15vh;
-    bottom: 0;
-    position: static;
+html {
     background-color:#f8c2a6;;
-    transition: background 0.5s;
-}  
+}
+
+.footer {
+    background-color: white;
+}
 
 footer section {
+    position: fixed;
+    bottom: 30%;
+    left: 2.5%;
     margin: 0 auto;
-    width: 18.802vw;
-    height: 10.09vh;
+    height: 15.802vw;
+    width: 10.09vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: transparent;
     border-radius: 5px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: background-color 1s;
 }
 
 .btn {

@@ -16,7 +16,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     float: right;
     right: 13.02vw;
-    top: 11.574vh;
+    top: 18vh;
 }
 
 .bioDescription {
@@ -33,8 +33,8 @@
     font-size: 2vh;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     float: right;
-    top: 20.83333vh;
-    right: 26.04166vw;
+    top: 30vh;
+    right: 20vw;
 }
 
 #spacer {

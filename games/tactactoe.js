@@ -20,7 +20,7 @@ const htmlTiles = document.getElementsByClassName('tile');
 const tiles = Array.prototype.slice.call(htmlTiles);
 const darkMode = document.getElementById('darkMode');
 const lightMode = document.getElementById('lightMode');
-const main = document.querySelector('main');
+const html = document.querySelector('html');
 const h1 = document.querySelector('h1');
 
 
@@ -340,7 +340,7 @@ function gameOver() {
 
 function theme() {
     if (settings.theme === 'light') {
-        main.style.background = 'white';
+        html.style.background = 'white';
         h1.style.color = 'black';
         themeContainer.style.color = 'black';
         themeLabel.style.color = 'black';
@@ -354,7 +354,7 @@ function theme() {
         computerText.style.color = 'black';
         winText.style.color  = 'black';
     } else {
-        main.style.background = 'black';
+        html.style.background = 'black';
         h1.style.color = 'white';
         themeContainer.style.color = 'white';
         themeLabel.style.color = 'white';
