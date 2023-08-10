@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     background: url(./images/banner.gif) center center no-repeat;
     background-size: cover;
     color: lightpink;
@@ -39,6 +39,30 @@
     font-family: 'Vina Sans', cursive;
 }
 
+#downArrow {
+    transform: rotate(90deg);
+    width: 10%;
+    height: 25%;
+    position: absolute;
+    bottom: -3vh;
+}
+
+.downArrowMoved {
+    visibility: hidden;
+}
+
+.downArrow {
+    visibility: visible;
+    animation: 
+        typing 3s steps(100, end) infinite;
+}
+
+@keyframes typing {
+    0% { opacity: 0 }
+    45% {opacity: 1 }
+    90% { opacity: 0 }
+    100% {opacity: 0 ;}
+}
 
 /* main */
 #grad {
@@ -90,23 +114,23 @@
 #photoOne {
     float: right;
     right: 13.02vw;
-    bottom: 9.25vh;
+    top: 2.75vh;
 }
 
 #containerOne {
     float: right;
-    top: 5vh;
+    top: 17vh;
     right: 26vw;
 }
 
 #photoTwo {
     float: left;
     left: 13vw;
-    top: 70vh;
+    top: 82vh;
 }
 
 #containerTwo {
     float: left;
-    top: 40vh;
+    top: 52vh;
     left: 26vw;
 }

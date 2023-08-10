@@ -17,9 +17,11 @@
                 if (document.documentElement.scrollTop > 50) {
                     document.getElementById('navBar').className = 'header';
                     document.getElementById('footer').className = 'footer';
+                    document.getElementById('downArrow').className = 'downArrowMoved';
                 } else {
                     document.getElementById('navBar').className = '';
                     document.getElementById('footer').className = '';
+                    document.getElementById('downArrow').className = 'downArrow';
                 }
             }
         </script>
@@ -39,6 +41,7 @@
             <div class="banner">
                 <h1>JACKY LI</h1>
                 <a href="./about.html" id="learnMore">Learn More</a>
+                <img src="./images/downArrow.png" id="downArrow" class="downArrow">
             </div>
             <div id="grad">
                 <section>
