@@ -36,7 +36,7 @@ html {
 }
 
 #learnMore:hover {
-    font-size: 3.1vh;
+    font-size: 3.25vh;
     background-color: transparent;
     color: white;
 }
@@ -60,7 +60,11 @@ html {
     transform: translateX(-200%)
 }
 
-.banner h1, #learnMore {
+.banner h1 {
+    animation: 2s ease-out 1s 1 fadeInDelayed, 2s ease-out 1s 1 fontSize !important;
+}
+
+#learnMore {
     animation: 2s ease-out 1s 1 fadeInDelayed !important;
 }
 
@@ -77,12 +81,21 @@ html {
     }
 }
 
+@keyframes fontSize {
+    0% {
+        font-size: 60vh;
+    }
+    100% {
+        font-size: 40vh;
+    }
+}
+
 #navBar {
-    animation: 2s ease-out 3s 1 slideInTop !important;
+    animation: 1s ease-out 2.5s 1 slideInTop !important;
 }
 
 #footer {
-    animation: 2s ease-out 3s 1 slideInLeft !important;
+    animation: 1s ease-out 2.5s 1 slideInLeft !important;
 }
 
 @keyframes fadeInDelayed {

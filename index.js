@@ -39,4 +39,4 @@ setTimeout(() => {
         document.getElementById('downArrow').style.opacity = '1';
         document.getElementById('navBar').style.transform = 'translateY(0)';
         document.getElementById('footer').style.transform = 'translateX(0)';
-}, "5000");
+}, "3499");
