@@ -45,7 +45,6 @@ section {
 #docColor, #userColor {
     width: 250px;
     height: 250px;
-    border: 1px solid red;
     display: none;
     margin-bottom: 50px;
     margin-left: 50px;
@@ -55,6 +54,8 @@ section {
     color: white;
     font-size: 40px;
     -webkit-text-stroke: 2px black;
+    border-radius: 10%;
+    border: 1px solid white;
 }
 
 .colorsContainer {
@@ -280,10 +281,6 @@ table {
 
 
 /* footer */
-#footer {
-    transition: background-color 0.5s;
-}  
-
 #footerSection {
     bottom: 50%;
 }

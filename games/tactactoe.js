@@ -1,5 +1,4 @@
 /* variable declarations */
-const footer = document.getElementById('footer');
 const startButton = document.getElementById('startButton');
 const computerButton = document.getElementById('computerButton');
 const pvpButton = document.getElementById('pvpButton');
@@ -350,7 +349,6 @@ function theme() {
         retryButton.style.backgroundColor = 'white';
         retryButton.style.color = 'black';
         retryButton.style.border = '1px solid black';
-        footer.style.backgroundColor = 'white';
         computerText.style.color = 'black';
         winText.style.color  = 'black';
     } else {
@@ -364,7 +362,6 @@ function theme() {
         retryButton.style.backgroundColor = 'black';
         retryButton.style.color = 'white';
         retryButton.style.border = '1px solid white';
-        footer.style.backgroundColor = 'black';
         computerText.style.color = 'white';
         winText.style.color = 'white';
     }

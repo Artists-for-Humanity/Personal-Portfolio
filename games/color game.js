@@ -21,16 +21,15 @@ const easyText = document.getElementById('easyText');
 const mediumText = document.getElementById('mediumText');
 const hardText = document.getElementById('hardText');
 const difficultyButton = document.getElementById('difficultyButton');
-const footer = document.getElementById('footer');
-footer.style.backgroundColor = 'black';
+const html = document.querySelector('html');
 
 
 
 /*data objects*/
 const gameValues = {
-    red: 0,
-    green: 0,
-    blue: 0
+    red: 127,
+    green: 127,
+    blue: 127
 };
 
 const rightValues = {
@@ -59,21 +58,21 @@ function endGame() {
     difficultyButton.addEventListener('click', changeDifficulty);
     if (settings.difficulty === 1) {
         if (percentOff >= 90) {
-            retryButton.innerHTML = `YOU <strong>WIN</strong>! You were ${percentOff}% correct. Click this button to try again?`;
+            retryButton.innerHTML = `YOU <strong>WIN</strong>! You were ${percentOff}% correct. <br> Click this button to try again?`;
         } else {
-            retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. Click this button to try again?`;
+            retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. <br> Click this button to try again?`;
         }
     } else if (settings.difficulty === 2) {
         if (percentOff >= 95) {
-            retryButton.innerHTML = `YOU <strong>WIN</strong>! You were ${percentOff}% correct. Click this button to try again?`;
+            retryButton.innerHTML = `YOU <strong>WIN</strong>! You were ${percentOff}% correct. <br> Click this button to try again?`;
         } else {
-            retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. Click this button to try again?`;
+            retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. <br> Click this button to try again?`;
         }
     } else {
         if (percentOff >= 99) {
-            retryButton.innerHTML = 'YOU <strong>WIN</strong>! You were 100% correct! Impressive. Click this button to try again?';
+            retryButton.innerHTML = 'YOU <strong>WIN</strong>! You were 100% correct! Impressive. <br> Click this button to try again?';
         } else {
-            retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. Click this button to try again?`;
+            retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. <br> Click this button to try again?`;
         }
     }
 };
@@ -82,6 +81,7 @@ function startGame() {
     easyText.style.display = 'none';
     mediumText.style.display = 'none';
     hardText.style.display = 'none';
+    userColor.style.backgroundColor = 'rgb(127, 127, 127)';
     if (settings.difficulty === 1) {
         redVal.step ='15';
         greenVal.step = '15';
@@ -105,6 +105,12 @@ function startGame() {
     docColor.style.display = 'inline';
     userColor.style.display = 'inline';
     redVal.style.display = 'inline';
+    redVal.value = '127';
+    blueVal.value = '127';
+    greenVal.value= '127';
+    gameValues.red = 127;
+    gameValues.blue = 127;
+    gameValues.green = 127;
     submitButton.style.display = 'inline';
     greenVal.style.display = 'inline';
     blueVal.style.display = 'inline';
@@ -182,7 +188,9 @@ function theme() {
         redVal.style.border = '2px solid black';
         greenVal.style.border = '2px solid black';
         blueVal.style.border = '2px solid black';
-        footer.style.backgroundColor = 'white';
+        html.style.background = 'white';
+        userColor.style.border = '1px solid black';
+        docColor.style.border = '1px solid black';
     } else {
         body.style.background = 'black';
         h1.style.color = 'white';
@@ -213,7 +221,9 @@ function theme() {
         redVal.style.border = '2px solid white';
         greenVal.style.border = '2px solid white';
         blueVal.style.border = '2px solid white';
-        footer.style.backgroundColor = 'black';
+        html.style.background = 'black';
+        userColor.style.border = '1px solid white';
+        docColor.style.border = '1px solid white';
     }
 };
 
