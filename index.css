@@ -1,5 +1,10 @@
 * {
     box-sizing: border-box;
+    animation: 1s ease-out 0s 1 fadeIn;
+}
+
+html {
+    background-color: black;
 }
 
 /* banner */
@@ -43,6 +48,52 @@
     font-family: 'Vina Sans', cursive;
 }
 
+#downText, #downArrow, #learnMore, .banner h1 {
+    opacity: 0;
+}
+
+#navBar {
+    transform: translateY(-100%)
+}
+
+#footer {
+    transform: translateX(-200%)
+}
+
+.banner h1, #learnMore {
+    animation: 2s ease-out 1s 1 fadeInDelayed !important;
+}
+
+.slideinRight {
+    animation: 1s ease-out 1s 1 slideInRight !important;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#navBar {
+    animation: 2s ease-out 3s 1 slideInTop !important;
+}
+
+#footer {
+    animation: 2s ease-out 3s 1 slideInLeft !important;
+}
+
+@keyframes fadeInDelayed {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 #downArrow {
     width: 5%;
     height: 10%;
@@ -73,10 +124,10 @@
 .downArrow, .downText {
     visibility: visible;
     animation: 
-        typing 3s steps(100, end) infinite;
+        blinkingScrollDown 3s steps(100, end) infinite;
 }
 
-@keyframes typing {
+@keyframes blinkingScrollDown {
     0% { opacity: 0 }
     45% {opacity: 1 }
     90% { opacity: 0 }
