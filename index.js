@@ -27,11 +27,12 @@ window.onscroll = function() {
 
 setTimeout(() => {
         document.querySelector('html').style.backgroundColor = '#f8c2a6';
-}, "0999");
+}, "1500");
 
 setTimeout(() => {
         document.getElementById('jackyLiHeader').style.opacity = '1';
         document.getElementById('learnMore').style.opacity = '1';
+        document.getElementById('jackyLiHeader').style.fontSize = '40vh';
 }, "1999");
 
 setTimeout(() => {
