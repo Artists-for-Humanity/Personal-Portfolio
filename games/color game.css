@@ -5,6 +5,10 @@ body {
     height: 100vh;
 }
 
+html {
+    transition: background 0.5s;
+}
+
 h1, p {
     color: white;
     text-align: center;

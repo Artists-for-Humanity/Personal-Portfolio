@@ -1,3 +1,5 @@
+if(window.innerHeight < window.innerWidth) {
+    
 window.onscroll = function() {
     if (document.documentElement.scrollTop > 50) {
             document.getElementById('navBar').className = 'header';
@@ -18,11 +20,6 @@ window.onscroll = function() {
             document.getElementById('email').className = 'btn email';
             document.getElementById('linkedIn').className = 'btn linkedIn';
     }
-    // if (document.documentElement.scrollTop > 1500) {
-    //     document.getElementById('photoOne').classname = 'photo photoOne';
-    // } else {
-    //     document.getElementById('photoOne').classname = 'photo notInFrame';
-    // }
 }
 
 setTimeout(() => {
@@ -41,3 +38,14 @@ setTimeout(() => {
         document.getElementById('navBar').style.transform = 'translateY(0)';
         document.getElementById('footer').style.transform = 'translateX(0)';
 }, "3499");
+
+} else {
+    document.getElementById('navIcon').onclick = function() {
+        let x = document.getElementById("navBar");
+        if (x.className !== "header-responsive") {
+          x.className = "header-responsive";
+        } else {
+          x.className = "header-responsive-close";
+        }
+    }
+}

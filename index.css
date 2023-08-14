@@ -1,3 +1,5 @@
+@media (orientation: landscape) {
+
 * {
     box-sizing: border-box;
     animation: 1s ease-out 0s 1 fadeIn;
@@ -219,11 +221,137 @@ html {
     left: 26vw;
 }
 
-.notInFrame {
-    visibility: hidden !important;
-}
-
 /* footer */
 .discord, .gitHub, .email, .linkedIn {
     border: 1px solid lightpink;
+}
+
+}
+
+
+
+
+
+@media (orientation: portrait) {
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #f8c2a6;
+}
+
+/* banner*/
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(./images/banner.gif) center center no-repeat;
+    background-size: cover;
+    color: lightpink;
+}
+  
+#learnMore {
+    display: none;
+}
+  
+.banner h1 {
+    text-align: center;
+    padding-top: 1.644444vh;
+    font-size: 15vh;
+    text-shadow: 1px 1px 2px black;
+    font-family: 'Vina Sans', cursive;
+}
+
+#downArrow {
+    width: 20%;
+    height: 10%;
+    z-index: 5;
+    position: absolute;
+    bottom: 4vh;
+    animation: blinkingScrollDown 3s steps(100, end) infinite;
+}
+
+#downText {
+    position: absolute;
+    bottom: 3vh;
+    color: white;
+    font-family: 'Chivo', sans-serif;
+    padding-bottom: 0.5vh;
+    border-bottom: 0.1vh solid white;
+    z-index: 5;
+    font-size: 2vh;
+    animation: blinkingScrollDown 3s steps(100, end) infinite;
+}
+
+@keyframes blinkingScrollDown {
+    0% { opacity: 0 }
+    45% {opacity: 1 }
+    90% { opacity: 0 }
+    100% {opacity: 0 ;}
+}
+
+/* main */
+#grad {
+    background-image: linear-gradient(#e8d8d8 , #f8c2a6);
+    height: 160vh;
+}
+
+.indexDiv {
+    margin-bottom: 2vh;
+    background-color: #e8d8d8;
+    border: 1px solid #e8d8d8;
+}
+
+.indexDivBottom {
+    margin-bottom: 2vh;
+    background-color: #f8c2a6;
+    border: 1px solid #f8c2a6;
+}
+
+.photo {
+    display: block;
+    margin-bottom: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 10px solid white;
+    width: 75%;
+    height: auto;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}   
+
+.container {
+    margin-bottom: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 10px;
+    border: 10px solid white;
+    width: 75%;
+    height: 50%;
+    padding: 9.259vh 5.2083vw;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container h1 {
+    font-family: Merriweather, serif;
+    font-size: 2.96296296vh;
+    margin-bottom: 2.314vh;
+}
+
+.container p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.48148148vh;
+    line-height: 1.85185185vh;
+}
+
 }

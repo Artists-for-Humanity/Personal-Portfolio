@@ -1,3 +1,5 @@
+@media (orientation: landscape) {
+
 * {
     box-sizing: border-box;
 }
@@ -54,4 +56,31 @@
 .quote {
     font-size: 4vh !important;
     font-family: 'Times New Roman', Times, serif !important;
+}
+
+}
+
+
+
+
+
+@media (orientation: portrait) {
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #f8c2a6;
+}
+
+#grad {
+    background-image: linear-gradient(#e8d8d8 , #f8c2a6);
+    height: 100vh;
+}
+
+#bioPhoto, .bioDescription, .quote, #quote, #quoteContainer {
+    display: none;
+}
+
 }

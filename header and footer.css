@@ -1,3 +1,5 @@
+@media (orientation: landscape) {
+
 * {
     box-sizing: border-box;
 }
@@ -28,6 +30,10 @@
     100% {
         transform: translateX(0);
     }
+}
+
+#navIcon, #navContact {
+    display: none;
 }
 
 nav {
@@ -67,13 +73,14 @@ nav a {
     opacity: 1;
     box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
     font-weight: 600;
+    padding: 0.46vh 0.26vw;
 }
 
 #logo:hover {
     opacity: 0.5;
 }
 
-#navHome:hover, #navContact:hover, #navAbout:hover, #navGames:hover/*, #navProjects:hover*/ {
+#navHome:hover, #navResume:hover, #navAbout:hover, #navGames:hover/*, #navProjects:hover*/ {
     color: lightpink;
     opacity: 0.5;
 }
@@ -144,4 +151,109 @@ footer section {
 .btn img:hover {
     width: 3.125vw;
     height: 5.555vh;
+}
+
+}
+
+
+
+
+
+@media (orientation: portrait) {
+
+/* header*/
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    height: 6.5777vh;
+    padding: 1.5vh 2vw;
+    background-color: black;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'Chivo', sans-serif;
+    font-size: 2.5vh;
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.header-responsive {
+    height: 6.5777vh;
+    animation: 0.5s ease-out 0s 1 headerResponsiveClick;
+    height: 33vh;
+}
+
+.header-responsive-close {
+    height: 33vh;
+    animation: 0.5s ease-out 0s 1 headerResponsiveClose;
+    height: 6.5777vh;
+}
+
+@keyframes headerResponsiveClick {
+    0% {
+        height: 6.5777vh;
+    }
+    100% {
+        height: 33vh;
+    }
+}
+
+@keyframes headerResponsiveClose {
+    0% {
+        height: 33vh;
+    }
+    100% {
+        height: 6.5777vh;
+    }
+}
+
+nav a {
+    display: block;
+    padding: 0.46vh 0vw;
+    opacity: 1;
+    text-decoration: none;
+    color: rgba(255, 182, 193, 0.5);
+    text-align: center;
+    background-color: black;
+    margin-bottom: 1vh;
+}
+
+#logo {
+    display: inline-block;
+    visibility: visible;
+    margin-bottom: 1vh;
+    color: lightpink;
+    border: 3px solid lightpink;
+    border-radius: 5px;
+    font-family: 'Bodoni Moda', serif;
+    opacity: 1;
+    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
+    font-weight: 600;
+    padding: 0.5vh 1vw;
+}
+
+#navIcon {
+    display: inline;
+    float: right;
+    opacity: 1 !important;
+    letter-spacing: 0.5vw;
+    margin-right: 1vw;
+    color: lightpink;
+    transform: rotate(90deg);
+}
+
+.current {
+    color: rgb(255, 182, 193);
+    text-decoration-line: underline;
+}
+
+
+
+/* footer */
+#footer, .footer {
+    display: none;
+}
+
 }
