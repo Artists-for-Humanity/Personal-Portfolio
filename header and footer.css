@@ -48,7 +48,7 @@ nav {
 }
 
 nav a {
-    padding: 0.46vh 0.26vw;
+    padding: 0.46vh 0vw;
     opacity: 1;
     text-decoration: none;
     color: lightpink;
@@ -88,7 +88,7 @@ nav a {
 
 .current {
     color: lightpink;
-    text-decoration-line: underline;
+    border-bottom: 3px solid pink;
     opacity: 1 !important;
 }
 

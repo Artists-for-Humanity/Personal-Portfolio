@@ -33,6 +33,7 @@ html {
     background-color: lightpink;
     transition: font-size 0.15s, background-color 0.15s, color 0.15s;
     letter-spacing: 0.5vw;
+    visibility: hidden;
 }
 
 #learnMore:hover {

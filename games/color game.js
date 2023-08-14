@@ -22,6 +22,15 @@ const mediumText = document.getElementById('mediumText');
 const hardText = document.getElementById('hardText');
 const difficultyButton = document.getElementById('difficultyButton');
 const html = document.querySelector('html');
+const timerDisplay = document.getElementById('timerDisplay');
+const timerHour = document.getElementById('timerHour');
+const timerMinute = document.getElementById('timerMinute');
+const timerSecond = document.getElementById('timerSecond');
+const timerMillisecond = document.getElementById('timerMillisecond');
+const easyHighText = document.getElementById('easyHighText');
+const mediumHighText = document.getElementById('mediumHighText');
+const hardHighText = document.getElementById('hardHighText');
+const currentMode = document.getElementById('currentMode');
 
 
 
@@ -40,15 +49,30 @@ const rightValues = {
 
 const settings = {
     difficulty: 2, //1 = easy, 2 = medium, 3 = hard (default on medium)
-    mode: '' //light vs dark mode
+    mode: '', //light vs dark mode
+    timer: false, //false = timer is off, true= timer is on
+    count: 0,
+    hour: 0,
+    second: 0,
+    minute: 0,
+    totalScore: 0,
+    easyHigh: 0,
+    mediumHigh: 0,
+    hardHigh: 0,
+    easyPlayed: false,
+    mediumPlayed: false,
+    hardPlayed: false,
 };
 
 
 
 /* function declarations */
 function endGame() {
+    settings.timer = false;
     userColor.innerHTML = `rgb(${gameValues.red}, ${gameValues.green}, ${gameValues.blue})`;
     docColor.innerHTML = `rgb(${rightValues.red}, ${rightValues.green}, ${rightValues.blue})`;
+    docColor.style.transform = 'translateY(-10%)';
+    userColor.style.transform = 'translateX(-50%)';
     submitButton.style.display = 'none';
     submitButton.removeEventListener('click', endGame);
     let percentOff = Math.floor((((1-(Math.abs(gameValues.red - rightValues.red)/255))*100)+((1-(Math.abs(gameValues.green - rightValues.green)/255))*100)+((1-(Math.abs(gameValues.blue - rightValues.blue)/255))*100))/3);
@@ -56,21 +80,65 @@ function endGame() {
     retryButton.addEventListener('click', startGame);
     difficultyButton.style.display = 'inline';
     difficultyButton.addEventListener('click', changeDifficulty);
+    settings.totalScore = ((settings.hour)*3600)+((settings.minute)*60)+(settings.second)+((settings.count)/100);
+    console.log(settings.totalScore);
+    console.log(settings.easyHigh);
+    console.log(settings.mediumHigh);
+    console.log(settings.hardHigh);
     if (settings.difficulty === 1) {
+        mediumHighText.style.display = 'none';
+        hardHighText.style.display = 'none';
+        easyHighText.style.display = 'inline';
         if (percentOff >= 90) {
             retryButton.innerHTML = `YOU <strong>WIN</strong>! You were ${percentOff}% correct. <br> Click this button to try again?`;
+            if (settings.easyPlayed === false) {
+                settings.easyHigh = settings.totalScore;
+                easyHighText.innerHTML = `${settings.hour}:${settings.minute}:${settings.second}:${settings.count}`;
+                settings.easyPlayed = true;
+            } else {
+                if (settings.totalScore < settings.easyHigh) {
+                    easyHighText.innerHTML = `${settings.hour}:${settings.minute}:${settings.second}:${settings.count}`;
+                    settings.easyHigh = settings.totalScore;
+                }
+            }
         } else {
             retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. <br> Click this button to try again?`;
         }
     } else if (settings.difficulty === 2) {
+        mediumHighText.style.display = 'inline';
+        hardHighText.style.display = 'none';
+        easyHighText.style.display = 'none';
         if (percentOff >= 95) {
             retryButton.innerHTML = `YOU <strong>WIN</strong>! You were ${percentOff}% correct. <br> Click this button to try again?`;
+            if (settings.mediumPlayed === false) {
+                settings.mediumHigh = settings.totalScore;
+                mediumHighText.innerHTML = `${settings.hour}:${settings.minute}:${settings.second}:${settings.count}`;
+                settings.mediumPlayed = true;
+            } else {
+                if (settings.totalScore < settings.mediumHigh) {
+                    mediumHighText.innerHTML = `${settings.hour}:${settings.minute}:${settings.second}:${settings.count}`;
+                    settings.mediumHigh = settings.totalScore;
+                }
+            }
         } else {
             retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. <br> Click this button to try again?`;
         }
     } else {
+        mediumHighText.style.display = 'none';
+        hardHighText.style.display = 'inline';
+        easyHighText.style.display = 'none';
         if (percentOff >= 99) {
             retryButton.innerHTML = 'YOU <strong>WIN</strong>! You were 100% correct! Impressive. <br> Click this button to try again?';
+            if (settings.hardPlayed === false) {
+                settings.hardHigh = settings.totalScore;
+                hardHighText.innerHTML = `${settings.hour}:${settings.minute}:${settings.second}:${settings.count}`;
+                settings.hardPlayed = true;
+            } else {
+                if (settings.totalScore < settings.hardHigh) {
+                    hardHighText.innerHTML = `${settings.hour}:${settings.minute}:${settings.second}:${settings.count}`;
+                    settings.hardPlayed = true;
+                }
+            }
         } else {
             retryButton.innerHTML = `You <strong>LOSE</strong>, but you were ${percentOff}% correct. <br> Click this button to try again?`;
         }
@@ -78,6 +146,17 @@ function endGame() {
 };
 
 function startGame() {
+    userColor.style.transform = 'translateX(0%)';
+    docColor.style.transform = 'translateY(0%)';
+    timerHour.innerHTML = '00';
+    timerMinute.innerHTML = '00';
+    timerSecond.innerHTML = '00';
+    timerMillisecond.innerHTML = '00';
+    settings.hour = 0;
+    settings.count = 0;
+    settings.minute = 0;
+    settings.second = 0;
+    settings.timer = true;
     easyText.style.display = 'none';
     mediumText.style.display = 'none';
     hardText.style.display = 'none';
@@ -87,13 +166,25 @@ function startGame() {
         greenVal.step = '15';
         blueVal.step = '15';
         easyText.style.display =  'inline';
+        currentMode.innerHTML = 'Easy ';
+        mediumHighText.style.display = 'none';
+        hardHighText.style.display = 'none';
+        easyHighText.style.display = 'inline';
     } else if (settings.difficulty === 2) {
         mediumText.style.display =  'inline';
         redVal.step ='1';
         greenVal.step = '1';
         blueVal.step = '1';
+        currentMode.innerHTML = 'Medium ';
+        mediumHighText.style.display = 'inline';
+        hardHighText.style.display = 'none';
+        easyHighText.style.display = 'none';
     } else {
         hardText.style.display =  'inline';
+        currentMode.innerHTML = 'Hard ';
+        mediumHighText.style.display = 'none';
+        hardHighText.style.display = 'inline';
+        easyHighText.style.display = 'none';
         redVal.step ='1';
         greenVal.step = '1';
         blueVal.step = '1';
@@ -104,6 +195,7 @@ function startGame() {
     startButton.style.display = 'none';
     docColor.style.display = 'inline';
     userColor.style.display = 'inline';
+    timerDisplay.style.display = 'inline';
     redVal.style.display = 'inline';
     redVal.value = '127';
     blueVal.value = '127';
@@ -122,6 +214,46 @@ function startGame() {
     mediumButton.style.display = 'none';
     hardButton.style.display = 'none';
     difficultyButton.style.display = 'none';
+    timer();
+};
+function timer() {
+        if (settings.timer) {
+            settings.count++;
+            if (settings.count === 100) {
+                settings.second++;
+                settings.count = 0;
+            }
+            if (settings.second === 60) {
+                settings.minute++;
+                settings.second = 0;
+            }
+            if (settings.minute === 60) {
+                settings.hour++;
+                settings.minute = 0;
+                settings.second = 0;
+            }
+            let hrString = settings.hour;
+            let minString = settings.minute;
+            let secString = settings.second;
+            let countString = settings.count;
+            if (settings.hour < 10) {
+                hrString = "0" + hrString;
+            }
+            if (settings.minute < 10) {
+                minString = "0" + minString;
+            }
+            if (settings.second < 10) {
+                secString = "0" + secString;
+            }
+            if (settings.count < 10) {
+                countString = "0" + countString;
+            }
+            timerHour.innerHTML = hrString;
+            timerMinute.innerHTML = minString;
+            timerSecond.innerHTML = secString;
+            timerMillisecond.innerHTML = countString;
+            setTimeout(timer, 7);
+        }
 };
 
 function randomColor() {
@@ -138,6 +270,7 @@ function randomColor() {
 };
 
 function changeDifficulty() {
+    timerDisplay.style.display = 'none';
     difficultyButton.style.display = 'none';
     difficultyButton.removeEventListener ('click', changeDifficulty);
     easyText.style.display = 'inline';
@@ -191,6 +324,7 @@ function theme() {
         html.style.background = 'white';
         userColor.style.border = '1px solid black';
         docColor.style.border = '1px solid black';
+        timerDisplay.style.border = '1px solid black';
     } else {
         body.style.background = 'black';
         h1.style.color = 'white';
@@ -224,6 +358,7 @@ function theme() {
         html.style.background = 'black';
         userColor.style.border = '1px solid white';
         docColor.style.border = '1px solid white';
+        timerDisplay.style.border = '1px solid white';
     }
 };
 

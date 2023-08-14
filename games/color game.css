@@ -41,7 +41,7 @@ section {
 }
 
 
-/*the two boxes in the middle*/
+/*the three boxes in the middle*/
 #docColor, #userColor {
     width: 250px;
     height: 250px;
@@ -56,6 +56,28 @@ section {
     -webkit-text-stroke: 2px black;
     border-radius: 10%;
     border: 1px solid white;
+    transition: transform 0.5s;
+}
+
+#timerDisplay {
+    width: 250px;
+    height: 250px;
+    display: none;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    -webkit-text-stroke: 2px black;
+    border-radius: 10%;
+    border: 1px solid white;
+    font-weight: bold;
+}
+
+#easyHighText, #mediumHighText, #hardHighText {
+    display: none;
 }
 
 .colorsContainer {
