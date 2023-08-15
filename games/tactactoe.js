@@ -21,6 +21,22 @@ const darkMode = document.getElementById('darkMode');
 const lightMode = document.getElementById('lightMode');
 const html = document.querySelector('html');
 const h1 = document.querySelector('h1');
+const computerIcon = document.getElementById('computerIcon');
+
+
+
+/* mobile devices */
+if (window.innerHeight > window.innerWidth) {
+    let removedComputerText = computerText.parentNode.removeChild(computerText);
+    let removedComputerIcon = computerIcon.parentNode.removeChild(computerIcon);
+    let removedWinText = winText.parentNode.removeChild(winText);
+
+    document.getElementById('mobileComputer').appendChild(removedWinText);
+    document.getElementById('mobileComputer').appendChild(removedComputerIcon);
+    document.getElementById('mobileComputer').appendChild(removedComputerText);
+
+};  
+
 
 
 /* data objects */
@@ -75,6 +91,7 @@ const quotes = [
 
 /* function declarations */
 function startGame() {
+    computerIcon.style.display = 'block';
     winText.innerHTML = '';
     computerText.innerHTML = '';
     tiles.forEach((x) => {

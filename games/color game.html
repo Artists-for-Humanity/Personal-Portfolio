@@ -8,25 +8,28 @@
         <script src="./color game.js" defer></script>
         <link rel="stylesheet" type="text/css" href="./color game.css">
         <title>Match The Color! | Jacky Li</title>
-        <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="../images/faviconTwo.png">
+        <script src="../header.js" async></script>
         <link href="../header and footer.css" type="text/css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@200;300;400&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <nav class="header">
+            <nav class="header" id="headerResponsive">
                 <a id="logo" href="../index.html">JHL</a>
+                <a id="navIcon">|||</a>
                 <a id="navGames" class="current" href="../index.html#photoOne">Games</a>
                 <a id="navProjects">Projects</a>
-                <a id="navResume" href="../resume.html">Resume</a>                 
+                <a id="navResume" href="../resume.html">Resume</a>
+                <a id="navContact" href="../contact.html">Contact</a>                   
                 <a id="navAbout" href="../about.html">About</a>               
                 <a id="navHome" href="../index.html">Home</a>
             </nav>
         </header>
         <main>
             <section>
-                <div style="margin: 6vh 0px;"></div>
+                <div style="margin: 4vh 0px;"></div>
                 <h1>Match The Color!</h1> 
                 <div id="themeContainer">
                     <label for="mode" id="themeLabel">Choose theme:</label>
@@ -47,7 +50,7 @@
                     <p id="hardButton">Hard</p>
                 </div>
                 <p id="startButton">Start!</p>
-                <div class="colorsContainer">
+                <div id="colorsContainer">
                     <div id="docColor"></div>
                     <div id="userColor"></div>
                     <div id="timerDisplay">
@@ -60,6 +63,9 @@
                         <p id="mediumHighText"></p>
                         <p id="hardHighText"></p>
                     </div>
+                </div>
+                <div id="mobileTimer">
+                    
                 </div>
             </section>
             <div class="slideContainer">

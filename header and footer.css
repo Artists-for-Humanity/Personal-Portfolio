@@ -68,7 +68,7 @@ nav a {
     color: lightpink;
     border: 3px solid lightpink;
     border-radius: 5px;
-    font-family: 'Bodoni Moda', serif;
+    font-family: 'Bodoni Moda', serif !important;
     transition: opacity 0.15s;
     opacity: 1;
     box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
@@ -224,7 +224,7 @@ nav a {
     display: inline-block;
     visibility: visible;
     margin-bottom: 1vh;
-    color: lightpink;
+    color: #ffb6c1;
     border: 3px solid lightpink;
     border-radius: 5px;
     font-family: 'Bodoni Moda', serif;

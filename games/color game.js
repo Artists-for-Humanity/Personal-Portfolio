@@ -32,6 +32,11 @@ const mediumHighText = document.getElementById('mediumHighText');
 const hardHighText = document.getElementById('hardHighText');
 const currentMode = document.getElementById('currentMode');
 
+/* mobile devices */
+if (window.innerHeight > window.innerWidth) {
+    let removedTimerDisplay = timerDisplay.parentNode.removeChild(timerDisplay);
+    document.getElementById('mobileTimer').appendChild(removedTimerDisplay);
+};  
 
 
 /*data objects*/
@@ -71,8 +76,13 @@ function endGame() {
     settings.timer = false;
     userColor.innerHTML = `rgb(${gameValues.red}, ${gameValues.green}, ${gameValues.blue})`;
     docColor.innerHTML = `rgb(${rightValues.red}, ${rightValues.green}, ${rightValues.blue})`;
-    docColor.style.transform = 'translateY(-10%)';
-    userColor.style.transform = 'translateX(-50%)';
+    if (window.innerHeight < window.innerWidth) {
+        docColor.style.transform = 'translateY(-10%)';
+        userColor.style.transform = 'translateX(-50%)';
+    } else {
+        docColor.style.transform = 'translateY(-15%)';
+        userColor.style.transform = 'translateX(-20%)';
+    }
     submitButton.style.display = 'none';
     submitButton.removeEventListener('click', endGame);
     let percentOff = Math.floor((((1-(Math.abs(gameValues.red - rightValues.red)/255))*100)+((1-(Math.abs(gameValues.green - rightValues.green)/255))*100)+((1-(Math.abs(gameValues.blue - rightValues.blue)/255))*100))/3);
@@ -81,10 +91,6 @@ function endGame() {
     difficultyButton.style.display = 'inline';
     difficultyButton.addEventListener('click', changeDifficulty);
     settings.totalScore = ((settings.hour)*3600)+((settings.minute)*60)+(settings.second)+((settings.count)/100);
-    console.log(settings.totalScore);
-    console.log(settings.easyHigh);
-    console.log(settings.mediumHigh);
-    console.log(settings.hardHigh);
     if (settings.difficulty === 1) {
         mediumHighText.style.display = 'none';
         hardHighText.style.display = 'none';

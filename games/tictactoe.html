@@ -6,9 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <script src="./tactactoe.js" defer></script>
-        <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+        <link rel="icon" type="image/x-icon" href="../images/faviconTwo.png">
         <link href="../header and footer.css" type="text/css" rel="stylesheet">
         <link href="./tictactoe.css" type="text/css" rel="stylesheet">
+        <script src="../header.js" async></script>
         <link href="../reset.css" type="text/css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@200;300;400&display=swap" rel="stylesheet">
@@ -16,11 +17,13 @@
     </head>
     <body>
         <header>
-            <nav class="header">
+            <nav class="header" id="headerResponsive">
                 <a id="logo" href="../index.html">JHL</a>
+                <a id="navIcon">|||</a>
                 <a id="navGames" class="current" href="../index.html#photoOne">Games</a>
                 <a id="navProjects">Projects</a>
-                <a id="navResume" href="../resume.html">Resume</a>                 
+                <a id="navResume" href="../resume.html">Resume</a>      
+                <a id="navContact" href="../contact.html">Contact</a>                              
                 <a id="navAbout" href="../about.html">About</a>               
                 <a id="navHome" href="../index.html">Home</a>
             </nav> 
@@ -44,24 +47,33 @@
                         <td class="tile tileOne" id="tileOne"></td>
                         <td class="tile tileTwo" id="tileTwo"></td>
                         <td class="tile tileThree" id="tileThree"></td>
-                        <td></td>
-                        <td><img id="computerIcon" src="../images/computerIcon.png"></td>
+                        <td class="mobileTile"></td>
+                        <td class="mobileTile">
+                            <img id="computerIcon" src="../images/computerIcon.png">
+                        </td>
                     </tr>
                     <tr>
                         <td class="tile tileFour" id="tileFour"></td>
                         <td class="tile tileFive" id="tileFive"></td>
                         <td class="tile tileSix" id="tileSix"></td>
-                        <td></td>
-                        <td id="textContainer"><p id="computerText"></p></td>
+                        <td class="mobileTile"></td>
+                        <td class="mobileTile" id="textContainer">
+                            <p id="computerText"></p>
+                        </td>
                     </tr>
                     <tr>
                         <td class="tile tileSeven" id="tileSeven"></td>
                         <td class="tile tileEight" id="tileEight"></td>
                         <td class="tile tileNine" id="tileNine"></td>
-                        <td></td>
-                        <td id="winText"></td>
+                        <td class="mobileTile"></td>
+                        <td class="mobileTile">
+                            <p id="winText"></p>
+                        </td>
                     </tr>
                 </table>
+                <div id="mobileComputer">
+                    
+                </div>                        
                 <p id="retryButton">Play again?</p>
             </section>
             </main>

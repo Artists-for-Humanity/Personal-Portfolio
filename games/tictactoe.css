@@ -1,8 +1,168 @@
 /* main */
 * {
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Chivo', Geneva, Tahoma, sans-serif !important;
 }
+
+@media (orientation: portrait) {
+
+html {
+    background: black;
+    transition: background 0.5s;
+}
+
+h1, p {
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 5.92592vh;
+    margin-bottom: 1.851vh;
+}
+
+#themeContainer {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.851vh;
+}
+
+.everything {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* table grid */
+tr {
+    color: white;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4.629vh 2.604vw;
+    display: none;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13.888888vh;
+    width: 30vw;
+    height: 15vh;
+}
+
+#tileOne, #tileTwo, #tileFour, #tileFive, #tileSeven, #tileEight {
+    border-right: 0.0520833vw solid white;
+}
+
+#tileOne, #tileTwo, #tileThree, #tileFour, #tileFive, #tileSix {
+    border-bottom: 0.0925vh solid white;
+}
+
+.tile {
+    background-color: black;
+    transition: background-color 0.15s;
+}
+
+.mobileTile {
+    display: none !important;
+}
+
+/* computer */
+#computerIcon {
+    width: 50vw;
+    height: 10vh;
+    display: none;
+    margin: 5% auto;
+}
+
+/* buttons */
+.buttonContainer  {
+    display: flex;
+    justify-content: center;
+}
+
+#computerButton, #pvpButton {
+    text-align: center;
+    width: 7.8125vw;
+    height: 13.8888888vh;
+    padding: 2.3148vh 1.30208333vw;
+    font-size: 1.85185vh;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    opacity: 0.5;
+    box-shadow: 1px 2px 4px black;
+    -webkit-transition: .5s;
+    transition: box-shadow .5s;
+    transition: opacity .5s;
+    margin: 1.851851vh 0.520833vw;
+    display: none;
+}
+
+#startButton {
+    text-align: center;
+    width: 90%;
+    height: 20vh;
+    padding: 2.314814vh 1.3020vw;
+    font-size: 4rem;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    box-shadow: 1px 2px 4px black;
+    -webkit-transition: .5s;
+    transition: box-shadow .5s;
+    transition: opacity .5s;
+    margin: 4.629vh 2.604166vw;
+}
+
+#retryButton {
+    margin: 1.38888vh auto;
+    padding: 0.925vh 0.5208333vw;
+    text-align: center;
+    font-size: 1.851851vh;
+    width: 30%;
+    border: 1px solid white;
+    display: none;
+    color: white;
+    box-shadow: 1px 2px 4px black;
+    -webkit-transition: .5s;
+    transition: box-shadow .5s;
+    transition: opacity .5s;
+}
+
+#textContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#computerText {
+    margin: 10% auto;
+    width: 50vw;
+    height: auto;
+    font-size: 1.5vh;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+}
+
+
+#winText {
+    margin: 5% auto;
+    font-size: 1.481481vh;
+}
+
+}
+
+
+
+
+
+@media (orientation: landscape) {
 
 html {
     background: black;
@@ -146,7 +306,7 @@ td {
 }
 
 #computerText {
-    font-size: 1.82222vh;
+    font-size: 1.5vh;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-bottom: 0.27777vh solid red;
   }
@@ -171,4 +331,6 @@ td {
 
 #winText {
     font-size: 1.481481vh;
+}
+
 }
