@@ -48,7 +48,7 @@ html {
     padding-top: 1.644444vh;
     font-size: 60vh;
     text-shadow: 1px 1px 2px black;
-    font-family: 'Vina Sans', cursive;
+    font-family: 'Vina Sans', sans-serif;
 }
 
 #downText, #downArrow, #learnMore, .banner h1 {
@@ -153,20 +153,31 @@ html {
 /* main */
 #grad {
     background-image: linear-gradient(#e8d8d8 , #f8c2a6);
-    height: 160vh;
+    height: 140vh;
 }
 
 .photo {
     border-radius: 10px;
     border: 15px solid white;
     position: relative;
-    width: 26vw;
+    width: 30vw;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     transition: width 0.15s;
 }   
 
-.photo:hover {
-    width: 27vw;
+.gamebtn {
+    margin-top: 5%;
+    border: 2px solid black;
+    padding: 3% 10%;
+    font-family: 'Chivo';
+    color: black;
+    transition: background-color 0.4s;
+    text-decoration: none;
+}
+
+.gamebtn:hover {
+    background-color: black;
+    color: white;
 }
 
 .container {
@@ -176,7 +187,7 @@ html {
     position: relative;
     width: 26vw;
     height: 46vh;
-    padding: 9.259vh 5.2083vw;
+    padding: 4.5vh 2.5vw;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: center;
@@ -187,20 +198,20 @@ html {
 
 .container h1 {
     font-family: Merriweather, serif;
-    font-size: 2.96296296vh;
+    font-size: 4vh;
     margin-bottom: 2.314vh;
 }
 
 .container p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.48148148vh;
-    line-height: 1.85185185vh;
+    font-size: 3h;
+    line-height: 2vh;
 }
 
 #photoOne {
     float: right;
     right: 13.02vw;
-    top: 2.75vh;
+    top: 21vh;
 }
 
 #containerOne {
@@ -211,14 +222,14 @@ html {
 
 #photoTwo {
     float: left;
-    left: 13vw;
-    top: 82vh;
+    left: 16vw;
+    top: 92vh;
 }
 
 #containerTwo {
     float: left;
     top: 52vh;
-    left: 26vw;
+    left: 58vw;
 }
 
 /* footer */
@@ -263,7 +274,7 @@ html {
     padding-top: 1.644444vh;
     font-size: 15vh;
     text-shadow: 1px 1px 2px black;
-    font-family: 'Vina Sans', cursive;
+    font-family: 'Vina Sans', sans-serif;
 }
 
 #downArrow {
