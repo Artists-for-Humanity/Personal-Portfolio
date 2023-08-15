@@ -58,6 +58,10 @@
     font-family: 'Times New Roman', Times, serif !important;
 }
 
+#mobileDiv {
+    display: none;
+}
+
 }
 
 
@@ -79,8 +83,56 @@ html {
     height: 100vh;
 }
 
-#bioPhoto, .bioDescription, .quote, #quote, #quoteContainer {
-    display: none;
+#bioPhoto {
+    border-radius: 5px;
+    margin-top: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 15px solid white;
+    width: 90%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.bioDescription {
+    margin: 10% auto;
+    background-color: white;
+    border-radius: 5px;
+    border: 5px solid white;
+    padding: 4.6295vh 2.60415vw;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;
+    text-align: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#spacer {
+    width: 50vw;
+}
+
+#quote {
+    font-family: 'Edu SA Beginner', cursive;
+    font-size: 2.75vh;
+    margin: 15px;
+}
+
+#quoteContainer {
+    text-align: center;
+    margin-top: 15%;
+}
+
+.quote {
+    font-size: 4vh !important;
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+#mobileDiv {
+    margin-bottom: 2vh;
+    background-color: #f8c2a6;
+    border: 1px solid #f8c2a6;
 }
 
 }

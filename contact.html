@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+        <link href="./header and footer.css" type="text/css" rel="stylesheet">
+        <link href="./contact.css" type="text/css" rel="stylesheet">
+        <link href="./reset.css" type="text/css" rel="stylesheet">
+        <title>About | Jacky Li</title>
+        <script src="./header.js" async></script>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@200;300;400&display=swap" rel="stylesheet">
+        <script>
+            if (window.innerHeight < window.innerWidth) {
+                setTimeout("pageRedirect()", 10000);
+                alert("You will be redirected to the homepage of jackyli.org in 5 seconds."); 
+                function pageRedirect() {
+                window.location.replace("https://jackyli.org/");
+                };  
+            };
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav class="header" id="headerResponsive">
+                <a id="logo" href="./index.html">JHL</a>
+                <a id="navIcon">|||</a>
+                <a id="navGames" href="./index.html#photoOne">Games</a>
+                <a id="navProjects">Projects</a>
+                <a id="navResume" href="./resume.html">Resume</a>
+                <a id="navContact" class="current" href="./contact.html">Contact</a>                 
+                <a id="navAbout" href="./about.html">About</a>               
+                <a id="navHome" href="./index.html">Home</a>
+            </nav>
+        </header>
+        <main id="grad">
+            <div id="mobileDiv"></div>
+            <section id="contactInfo">
+                <h1>Contact Info</h1>
+                <a class="btn" href="https://www.discordapp.com/users/241937378791522332" target="_blank">
+                    <img src="./images/discord.jpeg">
+                    <p class="btnText">Discord</p>
+                </a>
+                <a class="btn" href="mailto:jackymon260@gmail.com" target="_blank">
+                    <img src="./images/email.png">
+                    <p class="btnText">Email</p>
+                </a>
+                <a class="btn" href="https://github.com/ilyKcaj" target="_blank">
+                    <img src="./images/github.png">
+                    <p class="btnText">GitHub</p>
+                </a>
+                <a class="btn" href="https://www.linkedin.com/in/jacky-li-0946a5246/" target="_blank">
+                    <img src="./images/linkedin.png">
+                    <p class="btnText">LinkedIn</p>
+                </a>
+            </section>
+            <p id="redirectText">
+                Note:   
+                This page is not meant to be viewed on desktops. 
+                This page is meant to be viewed only on mobile devices. 
+                You will be redirected to the homepage of jackyli.org in 5 seconds.
+            </p>
+        </main>
+    </body>
+</html>

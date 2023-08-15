@@ -1,0 +1,106 @@
+@media (orientation: portrait) {
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #f8c2a6;
+}
+
+#grad {
+    background-image: linear-gradient(#e8d8d8 , #f8c2a6);
+    height: 100vh;
+}
+
+#redirectText {
+    display: none;
+}
+
+h1 {
+    font-family: 'Chivo', sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#contactInfo {
+    margin: 0 auto;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: background-color 1s;
+}
+
+.btn {
+    background-color: black;
+    border: 1px solid lightpink;
+    border: none;
+    color: white;
+    padding: 0.4166vh 0.3125vw;
+    font-size: 1.4814vh;
+    cursor: pointer;
+    margin: 7% 10%;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: border 1s;
+    display: flex;
+    align-items: center;
+}
+
+.btn img {
+    width: 25%;
+    height: auto;
+    float: left;
+}
+
+.btnText {
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Chivo', sans-serif;
+    margin-left: 5%;
+}
+
+#mobileDiv {
+    margin-bottom: 30%;
+    background-color: #e8d8d8;
+    border: 1px solid #e8d8d8;
+}
+
+}
+
+@media (orientation: landscape) {
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #f8c2a6;
+}
+
+#grad {
+    background-image: linear-gradient(#e8d8d8 , #f8c2a6);
+    height: 100vh;
+}
+
+#redirectText {
+    position: relative;
+    top: 25%;
+    margin: 0 auto;
+    width: 75%;
+    font-size: 5vh;
+    border: 3px solid black;
+    padding: 10%;
+}
+
+}
