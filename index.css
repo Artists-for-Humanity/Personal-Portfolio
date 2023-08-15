@@ -365,4 +365,14 @@ html {
     line-height: 1.85185185vh;
 }
 
+.gamebtn {
+    margin-top: 5%;
+    border: 2px solid black;
+    padding: 3% 10%;
+    font-family: 'Chivo';
+    color: black;
+    transition: background-color 0.4s;
+    text-decoration: none;
+}
+
 }
