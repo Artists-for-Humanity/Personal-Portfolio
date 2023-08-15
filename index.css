@@ -153,14 +153,14 @@ html {
 /* main */
 #grad {
     background-image: linear-gradient(#e8d8d8 , #f8c2a6);
-    height: 140vh;
+    height: 135vh;
 }
 
 .photo {
     border-radius: 10px;
     border: 15px solid white;
     position: relative;
-    width: 30vw;
+    width: 40vw;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     transition: width 0.15s;
 }   
@@ -178,6 +178,15 @@ html {
 .gamebtn:hover {
     background-color: black;
     color: white;
+}
+
+#wip {
+    opacity: 0.25;
+}
+
+#wip:hover {
+    background-color: white;
+    color: black;
 }
 
 .container {
@@ -198,43 +207,54 @@ html {
 
 .container h1 {
     font-family: Merriweather, serif;
-    font-size: 4vh;
+    font-size: 6vh;
     margin-bottom: 2.314vh;
 }
 
 .container p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 3h;
-    line-height: 2vh;
+    font-size: 1.75vh;
+    line-height: 2.5vh;
 }
 
-#photoOne {
+.photoOne {
     float: right;
-    right: 13.02vw;
-    top: 21vh;
+    right: 10vw;
+    top: 15.5vh;
 }
 
 #containerOne {
     float: right;
-    top: 17vh;
-    right: 26vw;
+    top: 15vh;
+    right: 16vw;
 }
 
 #photoTwo {
     float: left;
-    left: 16vw;
-    top: 92vh;
+    left: 15vw;
+    top: 30.5vh;
 }
 
 #containerTwo {
     float: left;
-    top: 52vh;
-    left: 58vw;
+    top: 30vh;
+    left: 21vw;
 }
 
 /* footer */
 .discord, .gitHub, .email, .linkedIn {
     border: 1px solid lightpink;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
 }
 
 }
@@ -308,7 +328,7 @@ html {
 /* main */
 #grad {
     background-image: linear-gradient(#e8d8d8 , #f8c2a6);
-    height: 160vh;
+    height: 140vh;
 }
 
 .indexDiv {
@@ -322,6 +342,18 @@ html {
     background-color: #f8c2a6;
     border: 1px solid #f8c2a6;
 }
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
 
 .photo {
     display: block;
@@ -355,14 +387,14 @@ html {
 
 .container h1 {
     font-family: Merriweather, serif;
-    font-size: 2.96296296vh;
+    font-size: 6vh;
     margin-bottom: 2.314vh;
 }
 
 .container p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.48148148vh;
-    line-height: 1.85185185vh;
+    font-size: 1.75vh;
+    line-height: 2.5vh;
 }
 
 .gamebtn {
@@ -373,6 +405,10 @@ html {
     color: black;
     transition: background-color 0.4s;
     text-decoration: none;
+}
+
+#wip {
+    opacity: 0.25;
 }
 
 }
