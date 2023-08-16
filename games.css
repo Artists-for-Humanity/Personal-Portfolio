@@ -42,7 +42,7 @@ p {
 
 #gamesContainer {
     margin: 0 auto;
-    height: 125vh;
+    height: 140vh;
     width: 80%;
     display: flex;
     flex-direction: column;

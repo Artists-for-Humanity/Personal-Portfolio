@@ -28,7 +28,7 @@ h1 {
 
 #contactInfo {
     margin: 0 auto;
-    height: 75%;
+    height: 85%;
     width: 75%;
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@ h1 {
 }
 
 #mobileDiv {
-    margin-bottom: 30%;
+    margin-bottom: 20%;
     background-color: #e8d8d8;
     border: 1px solid #e8d8d8;
 }
