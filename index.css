@@ -207,13 +207,13 @@ html {
 
 .container h1 {
     font-family: Merriweather, serif;
-    font-size: 6vh;
+    font-size: 5vh;
     margin-bottom: 2.314vh;
 }
 
 .container p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.75vh;
+    font-size: 1.5vh;
     line-height: 2.5vh;
 }
 

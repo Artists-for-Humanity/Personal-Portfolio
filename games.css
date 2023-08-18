@@ -15,11 +15,9 @@ html {
 
 h1 {
     font-family: 'Chivo', sans-serif;
-    font-size: 4rem;
+    font-size: 15vw;
     text-align: center;
     font-weight: bold;
-    margin-top: 1%;
-    margin-bottom: 5%;
 }
 
 h2 {
@@ -42,12 +40,12 @@ p {
 
 #gamesContainer {
     margin: 0 auto;
-    height: 140vh;
+    height: 175vh;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -61,18 +59,20 @@ p {
     padding: 0.4166vh 0.3125vw;
     font-size: 1.4814vh;
     cursor: pointer;
-    margin: 2% 10%;
+    margin: 0% 10%;
     border-radius: 5px;
     text-decoration: none;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
+    height: 65vh;
 }
 
 .game img {
-    width: 80%;
-    height: auto;
+    width: 75%;
+    height: 38%;
 }
 
 .mobileIcon {
@@ -110,7 +110,7 @@ html {
 
 h1 {
     font-family: 'Chivo', sans-serif;
-    font-size: 4rem;
+    font-size: 4vw;
     text-align: center;
     font-weight: bold;
     margin-top: 1%;
@@ -118,15 +118,14 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2vw;
     text-align: center;
     font-family: 'Chivo', sans-serif;
-    margin-bottom: 3%;
     font-weight: bold;
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1vw;
     text-align: center;
     font-family: 'Chivo', sans-serif;
     margin-right: 5%;
@@ -160,6 +159,8 @@ p {
     transition: border 1s;
     display: flex;
     align-items: center;
+    width: 60vw;
+    height: 25vh;
 }
 
 .draw-border {
@@ -205,8 +206,8 @@ p {
 
 
 .game img {
-    width: 25%;
-    height: auto;
+    width: 10vw;
+    height: 15vh;
     float: left;
 }
 
