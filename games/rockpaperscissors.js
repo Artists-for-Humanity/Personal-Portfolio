@@ -132,23 +132,23 @@ submit.addEventListener("click", endGame);
 
 rock.onclick = function() {
   settings.userChoice = 'rock';
-  rock.className = 'option active';
-  paper.className = 'option';
-  scissors.className = 'option';
+  rock.className = 'option optionActive active';
+  paper.className = 'option optionActive';
+  scissors.className = 'option optionActive';
 };
 
 paper.onclick = function() {
   settings.userChoice = 'paper';
-  rock.className = 'option';
-  paper.className = 'option active';
-  scissors.className = 'option';
+  rock.className = 'option optionActive';
+  paper.className = 'option optionActive active';
+  scissors.className = 'option optionActive';
 };
 
 scissors.onclick = function() {
   settings.userChoice = 'scissors';
-  rock.className = 'option';
-  paper.className = 'option';
-  scissors.className = 'option active';
+  rock.className = 'option optionActive';
+  paper.className = 'option optionActive';
+  scissors.className = 'option optionActive active';
 };
 
 retryButton.addEventListener("click", playGame);
