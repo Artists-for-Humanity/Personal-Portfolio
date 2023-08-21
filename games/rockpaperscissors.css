@@ -145,20 +145,47 @@ h1 {
     color: white;
 }
 
+h2, #whoWon {
+    color: white;
+    font-size: 6vw;
+}
 
+.endContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.endText {
+    display: none;
+}
 
+#retryButton {
+    margin-top: 1vh;
+    color: white;
+    text-align: center;
+    display: none;
+    width: 90%;
+    height: 10%;
+    border: 1px solid white;
+    padding: 1vh 1vw;
+}
 
 
 @media (orientation: landscape) {
 
+h2, #whoWon {
+    font-size: 1.5vw;
+}
+
 .spacer {
-    margin-bottom: 12.5vh;
+    margin-bottom: 8vh;
     border: 1px solid black;  
 }
 
 h1 {
-    font-size: 5vw;
+    font-size: 4vw;
 }
 
 .option {
@@ -187,5 +214,16 @@ h1 {
     width: 400px;
     height: 400px;
 }
+
+#retryButton:hover {
+    opacity: 0.5;
+}
+
+#retryButton {
+    transition: opacity 0.15s;
+    width: 50%;
+    cursor: pointer;
+}
+
 
 }

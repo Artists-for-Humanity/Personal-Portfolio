@@ -6,9 +6,12 @@ const submit = document.getElementById('submit');
 const wheel = document.querySelector('.wheel');
 const spinBtn = document.querySelector('.spinBtn');
 const computer = document.querySelector('.computer');
+const userText = document.getElementById('userText');
+const htmlEndText = document.getElementsByClassName('endText');
+const endText = Array.prototype.slice.call(htmlEndText);
+const retryButton = document.getElementById('retryButton');
 
 const settings = {
-  mode: 'darkMode',
   userChoice: null,
   computerChoice: '',
 };
@@ -18,7 +21,7 @@ const settings = {
 function getComputerChoice() {
   setTimeout(()=> {
     let computerChoice = Math.floor(Math.random()*9)+1;
-    let spin = (computerChoice*40) + 1800;
+    let spin = (computerChoice*40) + Math.floor(Math.random()*7+1)*360;
     wheel.style.transform = `rotate(${spin}deg)`;
     switch (computerChoice) {
       case 1:
@@ -85,10 +88,16 @@ function endGame() {
     submit.style.display = 'none';
     paper.style.display = 'none';
     scissors.style.display = 'none';
+    let x = settings.userChoice.toUpperCase();
+    userText.innerHTML = `${x}`;
+    endText.forEach((x) => {
+      x.style.display = 'block'
+    });
     getComputerChoice();
     setTimeout(()=> {
-      console.log(settings.userChoice);
-      console.log(determineWinner(settings.userChoice, settings.computerChoice));
+      document.getElementById('computerText').innerHTML = settings.computerChoice.toUpperCase();
+      document.getElementById('whoWon').innerHTML = determineWinner(settings.userChoice, settings.computerChoice);
+      retryButton.style.display = 'block';
     }, 5000);
   } else {
     alert('Pick an option before submitting.')
@@ -96,13 +105,25 @@ function endGame() {
 };
 
 function playGame() {
-  rock.style.display = 'block';
-  paper.style.display = 'block';
-  scissors.style.display = 'block';
-  submit.style.display = 'block';
+  wheel.style.transform = `rotate(0deg)`;
+  settings.userChoice = null;
+  rock.className = 'option';
+  paper.className = 'option';
+  document.getElementById('computerText').innerHTML = '';
+  document.getElementById('whoWon').innerHTML = '';
+  scissors.className = 'option';
+  settings.computerChoice = '';
+  retryButton.style.display = 'none';
+  rock.style.display = 'flex';
+  paper.style.display = 'flex';
+  scissors.style.display = 'flex';
+  submit.style.display = 'flex';
   computer.style.display = 'none';
   wheel.style.display = 'none';
   spinBtn.style.display = 'none';
+  endText.forEach((x) => {
+    x.style.display = 'none'
+  });
 };
 
 
@@ -129,3 +150,5 @@ scissors.onclick = function() {
   paper.className = 'option';
   scissors.className = 'option active';
 };
+
+retryButton.addEventListener("click", playGame);

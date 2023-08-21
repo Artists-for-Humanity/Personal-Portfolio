@@ -40,7 +40,7 @@ p {
 
 #gamesContainer {
     margin: 0 auto;
-    height: 175vh;
+    height: 240vh;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -103,6 +103,10 @@ html {
     background: #f8c2a6;
 }
 
+.computerImg {
+    margin-left: 1vw;
+}
+
 #grad {
     background-image: linear-gradient(#e8d8d8 , #f8c2a6);
     height: 100vh;
@@ -133,7 +137,7 @@ p {
 
 #gamesContainer {
     margin: 0 auto;
-    height: 100%;
+    height: 125vh;
     width: 75%;
     display: flex;
     flex-direction: column;

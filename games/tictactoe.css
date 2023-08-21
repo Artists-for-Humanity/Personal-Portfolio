@@ -1,13 +1,10 @@
 /* main */
 * {
     box-sizing: border-box;
+    font-family: 'Chivo', Geneva, Tahoma, sans-serif !important;
 }
 
 @media (orientation: portrait) {
-
-* {
-    font-family: 'Chivo', Geneva, Tahoma, sans-serif;
-}
 
 html {
     background: black;

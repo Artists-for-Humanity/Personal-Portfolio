@@ -22,6 +22,7 @@ const lightMode = document.getElementById('lightMode');
 const html = document.querySelector('html');
 const h1 = document.querySelector('h1');
 const computerIcon = document.getElementById('computerIcon');
+html.style.background = 'black';
 
 
 
