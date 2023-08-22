@@ -32,11 +32,20 @@
             <div class="spacer"></div>
 
             <h1>Hangman!</h1>
-            <p class="streak">Current Streak: <span id="streak">0</span></p>
-            <p class="streak" style="margin-bottom: 3vh;">Highscore: <span id="highscore">0</span></p>
+            <!-- <p class="streak">Current Streak: <span id="streak">0</span></p>
+            <p class="streak" style="margin-bottom: 3vh;">Highscore: <span id="highscore">0</span></p> -->
+            <p class="streak">Only works on computer for now. Press letters on your keyboard to guess. Refresh the page to play again. </p>
 
             <div id="playButton" class="button">PLAY</div>
 
+            <div class="hangmanContainer">
+                <div class="ascii-art">
+                </div>
+                <div class="wordContainer">
+                    <p></p>
+                </div>
+            </div>
+            
             <table>
                 <tr>
                     <td class="tile" id="a">A</td>
@@ -74,6 +83,9 @@
                 </tr>   
             </table>
             
+            <div id="endText"></div>
+            <div id=retryButton>Retry?</div>
+
         </main>
         <footer>
             <section class="footer">
