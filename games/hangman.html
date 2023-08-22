@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="./hangman.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="../images/faviconTwo.png">
+        <link href="../header and footer.css" type="text/css" rel="stylesheet">
+        <link href="./hangman.css" type="text/css" rel="stylesheet">
+        <script src="../header.js" async></script>
+        <link href="../reset.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@200;300;400&display=swap" rel="stylesheet">
+        <title>Hangman! | Jacky Li</title>
+    </head>
+    <body>
+        <header>
+            <nav class="header" id="headerResponsive">
+                <a id="logo" href="../index.html">JHL</a>
+                <a id="navIcon">|||</a>
+                <a id="navGames" class="current" href="../games.html">Games</a>
+                <a id="navProjects">Projects</a>
+                <a id="navResume" href="../resume.html">Resume</a>      
+                <a id="navContact" href="../contact.html">Contact</a>                              
+                <a id="navAbout" href="../about.html">About</a>               
+                <a id="navHome" href="../index.html">Home</a>
+            </nav> 
+        </header>
+        <main>
+            <div class="spacer"></div>
+
+            <h1>Hangman!</h1>
+            <p class="streak">Current Streak: <span id="streak">0</span></p>
+            <p class="streak" style="margin-bottom: 3vh;">Highscore: <span id="highscore">0</span></p>
+
+            <div id="playButton" class="button">PLAY</div>
+
+            <table>
+                <tr>
+                    <td class="tile" id="a">A</td>
+                    <td class="tile" id="b">B</td>
+                    <td class="tile" id="c">C</td>
+                    <td class="tile" id="d">D</td>
+                    <td class="tile" id="e">E</td>
+                    <td class="tile" id="f">F</td>
+                    <td class="tile" id="g">G</td>
+                    <td class="tile" id="h">H</td>
+                    <td class="tile" id="i">I</td>
+                </tr>
+                <tr>
+                    <td class="tile" id="j">J</td>
+                    <td class="tile" id="k">K</td>
+                    <td class="tile" id="l">L</td>
+                    <td class="tile" id="m">M</td>
+                    <td class="tile" id="n">N</td>
+                    <td class="tile" id="o">O</td>
+                    <td class="tile" id="p">P</td>
+                    <td class="tile" id="q">Q</td>
+                    <td class="tile" id="r">R</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class="tile" id="s">S</td>
+                    <td class="tile" id="t">T</td>
+                    <td class="tile" id="u">U</td>
+                    <td class="tile" id="v">V</td>
+                    <td class="tile" id="w">W</td>
+                    <td class="tile" id="x">X</td>
+                    <td class="tile" id="y">Y</td>
+                    <td class="tile" id="z">Z</td>
+                </tr>   
+            </table>
+            
+        </main>
+        <footer>
+            <section class="footer">
+                <a class="btn" href="https://www.discordapp.com/users/241937378791522332" target="_blank"><img src="../images/discord.png"></a>
+                <a class="btn" href="mailto:jackymon260@gmail.com" target="_blank"><img src="../images/email.png"></a>
+                <a class="btn" href="https://github.com/ilyKcaj" target="_blank"><img src="../images/github.png"></a>
+                <a class="btn" href="https://www.linkedin.com/in/jacky-li-0946a5246/" target="_blank"><img src="../images/linkedin.png"></a>
+            </section>
+            <br><br>
+        </footer>
+    </body>
+</html>
