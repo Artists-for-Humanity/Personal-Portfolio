@@ -14,6 +14,8 @@ const retryButton = document.getElementById('retryButton');
 const settings = {
   userChoice: null,
   computerChoice: '',
+  streak: 0,
+  highscore: 0,
 };
 
 /* function */
@@ -60,21 +62,27 @@ function determineWinner(userChoice, computerChoice) {
     return 'Game is a tie.';
   } else if (userChoice === 'rock') {
       if (computerChoice === 'scissors') {
-        return 'User won.';
+        settings.streak += 1;
+        return 'You won.';
       } else {
-        return 'Computer won.';
+        settings.streak = 0;
+        return 'You lost.';
       }
   } else if (userChoice === 'paper') {
       if (computerChoice === 'rock') {
-        return 'User won.';
+        settings.streak += 1;
+        return 'You won.';
       } else {
-        return 'Computer won.';
+        settings.streak = 0;
+        return 'You lost.';
       }
   } else {
     if (computerChoice === 'paper') {
-      return 'User won.';
+      settings.streak += 1;
+      return 'You won.';
     } else {
-      return 'Computer won.';
+      settings.streak = 0;
+      return 'You lost.';
     }
   }
 };
@@ -98,6 +106,10 @@ function endGame() {
       document.getElementById('computerText').innerHTML = settings.computerChoice.toUpperCase();
       document.getElementById('whoWon').innerHTML = determineWinner(settings.userChoice, settings.computerChoice);
       retryButton.style.display = 'block';
+      document.getElementById('streak').innerHTML = settings.streak;
+      if (settings.highscore < settings.streak) {
+        document.getElementById('highscore').innerHTML = settings.streak;
+      }
     }, 5000);
   } else {
     alert('Pick an option before submitting.')
@@ -105,7 +117,7 @@ function endGame() {
 };
 
 function playGame() {
-  wheel.style.transform = `rotate(0deg)`;
+  wheel.style.transform = 'rotate(0deg)';
   settings.userChoice = null;
   rock.className = 'option';
   paper.className = 'option';

@@ -1,7 +1,10 @@
 /* main */
 * {
     box-sizing: border-box;
-    font-family: 'Chivo', Geneva, Tahoma, sans-serif !important;
+}
+
+main {
+    font-family: 'Chivo', Geneva, Tahoma, sans-serif;
 }
 
 @media (orientation: portrait) {
@@ -56,11 +59,11 @@ td {
 }
 
 #tileOne, #tileTwo, #tileFour, #tileFive, #tileSeven, #tileEight {
-    border-right: 0.0520833vw solid white;
+    border-right: 1.50833vw solid white;
 }
 
 #tileOne, #tileTwo, #tileThree, #tileFour, #tileFive, #tileSix {
-    border-bottom: 0.0925vh solid white;
+    border-bottom: 0.725vh solid white;
 }
 
 .tile {
