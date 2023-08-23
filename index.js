@@ -20,6 +20,20 @@ window.onscroll = function() {
             document.getElementById('email').className = 'btn email';
             document.getElementById('linkedIn').className = 'btn linkedIn';
     }
+    if (document.documentElement.scrollTop > 250) {
+        document.getElementById('containerOne').className = 'container slideInLeft';
+        setTimeout(() => {
+                document.getElementById('containerOne').style.transform = 'translateX(0)';
+        }, "0999");
+    }
+    if (document.documentElement.scrollTop > 1000) {
+        document.getElementById('photoTwo').className = 'photo slideInLeft';
+        document.getElementById('containerTwo').className = 'container slideInRight';
+        setTimeout(() => {
+                document.getElementById('containerTwo').style.transform = 'translateX(0)';
+                document.getElementById('photoTwo').style.transform = 'translateX(0)';
+        }, "0999");
+    }
 }
 
 setTimeout(() => {

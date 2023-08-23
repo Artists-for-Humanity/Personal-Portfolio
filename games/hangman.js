@@ -178,7 +178,6 @@ try {
 
 function tileClicked(event) {
     try {
-        console.log('TILECLICKED');
         let key = event.target.innerHTML.toLowerCase();
         if (settings.word.includes(key)) {
             document.getElementById(key).className = 'tile pressedRight';

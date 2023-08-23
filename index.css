@@ -7,6 +7,7 @@
 
 html {
     background-color: black;
+    overflow-x: hidden
 }
 
 /* banner */
@@ -71,18 +72,35 @@ html {
     animation: 2s ease-out 1s 1 fadeInDelayed !important;
 }
 
-.slideinRight {
-    animation: 1s ease-out 1s 1 slideInRight !important;
+
+
+.slideInLeft {
+    animation: 1s ease-out 0s 1 slideInLeft !important;
 }
 
-@keyframes slideInRight {
+@keyframes slideInLeft {
     0% {
-        transform: translateX(100%);
+        transform: translateX(-200%);
     }
     100% {
         transform: translateX(0);
     }
 }
+
+.slideInRight {
+    animation: 1s ease-out 0s 1 slideInRight !important;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
 
 @keyframes fontSize {
     0% {
@@ -224,6 +242,7 @@ html {
 }
 
 #containerOne {
+    transform: translateX(-200%);
     float: right;
     top: 15vh;
     right: 16vw;
@@ -233,12 +252,14 @@ html {
     float: left;
     left: 15vw;
     top: 30.5vh;
+    transform: translateX(-200%);
 }
 
 #containerTwo {
     float: left;
     top: 30vh;
     left: 21vw;
+    transform: translateX(200%);
 }
 
 /* footer */
