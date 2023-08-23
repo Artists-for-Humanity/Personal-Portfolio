@@ -14,6 +14,9 @@ const settings = {
     highscore: 0,
     wrongCounter: 0,
     win: null,
+    wordArray: '',
+    string: [],
+    correctWords: []
 };
 
 const hangmanAsciiArt = [
@@ -90,6 +93,8 @@ function updateAsciiArt() {
 
 
 function playGame() {
+    settings.string = [];
+    settings.wordArray = '';
     definitionDisplay.style.display = 'none';
     endText.style.display = 'none';
     retryButton.style.display = 'none';
@@ -98,10 +103,6 @@ function playGame() {
     settings.word = '';
     playButton.style.display = 'none';
     updateAsciiArt();
-    // const hangmanDiv = document.querySelector(".ascii-art");
-    // for (let line of hangmanAsciiArt) {
-    //     hangmanDiv.innerHTML += line + "<br>";
-    // }
 
     tiles.forEach((x) => {
         x.className = 'tile';
@@ -115,50 +116,12 @@ function playGame() {
     .then((data) => {
         let word = data[0];
         settings.word = word;
-        hangmanContainer.style.display = 'flex';
+        getWord();
         tiles.forEach((x) => {
-            x.style.display = 'inline-block';
-        });
-        let string = [];
-        for (let i = 0; i < settings.word.length; i += 1) {
-            string.push('_');
-        };
-        wordContainer.innerHTML = string.join(" "); 
-        const wordArray = settings.word.split("");
-
-        window.addEventListener("keydown", (event) => {
-            if (endText.style.display === 'block') {
-
-            } else {
-                try {
-                let key = event.key.toString();
-                if (word.includes(key)) {
-                    document.getElementById(key).className = 'tile pressedRight';
-                    for (let i = 0; i < settings.word.length; i += 1) {
-                        if (wordArray[i] === key) {
-                        string[i] = key;
-                        wordContainer.innerHTML = string.join(" "); 
-                        }
-                    };
-                } else if (document.getElementById(key).classList.contains('pressedRight') || document.getElementById(key).classList.contains('pressedWrong')) {
-                } else {
-                    document.getElementById(key).className = 'tile pressedWrong';
-                    settings.wrongCounter += 1;
-                }
-                if (settings.wrongCounter >= 6) {
-                    settings.win = false;
-                    gameOver();
-                };
-                if (!string.includes("_")) {
-                    settings.win = true;
-                    gameOver();
-                }
-                updateAsciiArt();
-                } catch(err) {};
-            }
-        });
-
-
+            x.addEventListener("click", tileClicked);
+        })
+        
+        window.addEventListener("keydown", keyPressed);
     })
     .catch(() => {
         throw new Error('Something went wrong while fetching API.');
@@ -166,14 +129,92 @@ function playGame() {
 
 }
 
+function getWord() {
+    hangmanContainer.style.display = 'flex';
+    tiles.forEach((x) => {
+        x.style.display = 'inline-block';
+    });
+    for (let i = 0; i < settings.word.length; i += 1) {
+        settings.string.push('_');
+    };
+    wordContainer.innerHTML = settings.string.join(" "); 
+    settings.wordArray = settings.word.split("");
+};
+
+function keyPressed(event) {
+try {
+    let key = event.key.toString();
+    if (settings.word.includes(key)) {
+        document.getElementById(key).className = 'tile pressedRight';
+        for (let i = 0; i < settings.word.length; i += 1) {
+            if (settings.wordArray[i] === key) {
+            settings.string[i] = key;
+            wordContainer.innerHTML = settings.string.join(" "); 
+            }
+        };
+    } else if (document.getElementById(key).classList.contains('pressedRight') || document.getElementById(key).classList.contains('pressedWrong')) {
+    } else {
+        document.getElementById(key).className = 'tile pressedWrong';
+        settings.wrongCounter += 1;
+    }
+    if (settings.wrongCounter >= 6) {
+        settings.win = false;
+        gameOver();
+    };
+    if (!settings.string.includes("_")) {
+        settings.win = true;
+        gameOver();
+    }
+    updateAsciiArt();
+
+
+    } catch(err) {};
+};
+
+function tileClicked(event) {
+    try {
+        console.log('TILECLICKED');
+        let key = event.target.innerHTML.toLowerCase();
+        if (settings.word.includes(key)) {
+            document.getElementById(key).className = 'tile pressedRight';
+            for (let i = 0; i < settings.word.length; i += 1) {
+                if (settings.wordArray[i] === key) {
+                settings.string[i] = key;
+                wordContainer.innerHTML = settings.string.join(" "); 
+                }
+            };
+        } else if (document.getElementById(key).classList.contains('pressedRight') || document.getElementById(key).classList.contains('pressedWrong')) {
+        } else {
+            document.getElementById(key).className = 'tile pressedWrong';
+            settings.wrongCounter += 1;
+        }
+        if (settings.wrongCounter >= 6) {
+            settings.win = false;
+            gameOver();
+        };
+        if (!settings.string.includes("_")) {
+            settings.win = true;
+            gameOver();
+        }
+        updateAsciiArt();
+        } catch(err) {};
+};
+
+
+
 function gameOver() {
+    tiles.forEach((x) => {
+        x.removeEventListener("click", tileClicked);
+    })
+    
+    window.removeEventListener("keydown", keyPressed);
     getDefinition();
     hangmanContainer.style.display = 'flex';
     tiles.forEach((x) => {
         x.style.display = 'none';
     });
     endText.style.display = 'block';
-    // retryButton.style.display = 'block';
+    retryButton.style.display = 'block';
 
     if (settings.win === true) {
         settings.streak += 1;
@@ -198,12 +239,6 @@ function gameOver() {
     }
 };
 
-// tiles.forEach((x) => {
-//     x.addEventListener("click", (event) => {
-//         event.target.className = 'tile pressed';
-//     });
-// })
-
 playButton.addEventListener("click", playGame);
 retryButton.addEventListener("click", playGame);
 
@@ -225,7 +260,7 @@ function getDefinition() {
         };
     })
     .catch(() => {
-        definitionDisplay.innerHTML = 'Something went wrong while fetching API (most likely no definition).';
+        definitionDisplay.innerHTML = 'Something went wrong while fetching API (most likely no definition found).';
         throw new Error('Something went wrong while fetching API.');
     });
     definitionDisplay.style.display = 'block';
