@@ -93,6 +93,11 @@ function updateAsciiArt() {
 
 
 function playGame() {
+    document.getElementById('correctWordsDisplay').style.display = 'flex';
+    if (settings.streak === 0) {
+        settings.correctWords = [];
+        document.getElementById('correctWords').innerHTML = "";
+    }
     settings.string = [];
     settings.wordArray = '';
     definitionDisplay.style.display = 'none';
@@ -219,6 +224,8 @@ function gameOver() {
     if (settings.win === true) {
         settings.streak += 1;
         endText.innerHTML = 'You win!';
+        settings.correctWords.push(settings.word);
+        document.getElementById('correctWords').innerHTML = settings.correctWords.join(" <br> ");
     } else {
         hangmanDiv.innerHTML = hangmanAsciiArt[0] + "<br>";
         hangmanDiv.innerHTML += hangmanAsciiArt[1] + "<br>";

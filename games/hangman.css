@@ -30,6 +30,8 @@ h1 {
 .streak {
     color: white;
     text-align: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 .button {
@@ -139,12 +141,38 @@ td {
     transition: opacity 0.25s;
 }
 
+#correctWordsDisplay {
+    width: 50%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3vw;
+    color: white;
+    height: auto;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin: 5vh auto;
+    border: 1px solid white;
+}
+
 #retryButton:hover {
     opacity: 0.5;
 }
 
 
 @media (orientation: landscape) {
+
+#correctWordsDisplay {
+    align-items: end;
+    border: 1px solid transparent;
+    font-size: 1vw;
+    position: absolute;
+    top: 2.5vh;
+    right: 0;
+    padding-right: 1vw;
+}
 
 #definitionDisplay {
     font-size: 1vw;
