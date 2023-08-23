@@ -69,10 +69,12 @@ td {
 }
 
 .pressedRight {
+    opacity: 0.25;
     border-color: green !important;
 }
 
 .pressedWrong {
+    opacity: 0.25;
     border-color: red !important;
 }
 
@@ -111,6 +113,19 @@ td {
     margin-top: 3vh;
 }
 
+#definitionDisplay {
+    width: 75%;
+    display: none;
+    text-align: center;
+    font-size: 3vw;
+    color: white;
+    height: auto;
+    margin-top: 3vh;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.75rem;
+}
+
 #retryButton {
     width: 50%;
     display: none;
@@ -131,13 +146,22 @@ td {
 
 @media (orientation: landscape) {
 
+#definitionDisplay {
+    font-size: 1vw;
+}
+
 .hangmanContainer {
     display: none;
     justify-content: center;
     border: 1px solid white !important;
-    height: 12.5vh;
-    width: 50vw;
+    height: 20vh;
+    width: 75vw;
     margin: 5vh auto;
+    font-size: 1vw;
+}
+
+.wordContainer {
+    font-size: 2vw !important;
 }
 
 .button {
@@ -158,6 +182,10 @@ h1 {
 }
 
 .tile {
+    padding-top: 2.5vh;
+    margin: 0.5vh 0.5vw;
+    width: 7vw;
+    height: 7vh;
     cursor: pointer;
 }
 

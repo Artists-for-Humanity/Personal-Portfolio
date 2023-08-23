@@ -6,6 +6,7 @@ const wordContainer = document.querySelector(".wordContainer");
 const hangmanDiv = document.querySelector(".ascii-art");
 const endText = document.getElementById('endText');
 const retryButton = document.getElementById('retryButton');
+const definitionDisplay = document.getElementById('definitionDisplay');
 
 const settings = {
     word: '',
@@ -84,20 +85,12 @@ function updateAsciiArt() {
         hangmanDiv.innerHTML += hangmanAsciiArt[10] + "<br>";
         hangmanDiv.innerHTML += hangmanAsciiArt[6] + "<br>";
         hangmanDiv.innerHTML += hangmanAsciiArt[7] + "<br>";
-    } else {
-        hangmanDiv.innerHTML = hangmanAsciiArt[0] + "<br>";
-        hangmanDiv.innerHTML += hangmanAsciiArt[1] + "<br>";
-        hangmanDiv.innerHTML += hangmanAsciiArt[2] + "<br>";
-        hangmanDiv.innerHTML += hangmanAsciiArt[3] + "<br>";
-        hangmanDiv.innerHTML += hangmanAsciiArt[4] + "<br>";
-        hangmanDiv.innerHTML += hangmanAsciiArt[5] + "<br>";
-        hangmanDiv.innerHTML += hangmanAsciiArt[6] + "<br>";
-        hangmanDiv.innerHTML += hangmanAsciiArt[7] + "<br>";
     }
 }
 
 
 function playGame() {
+    definitionDisplay.style.display = 'none';
     endText.style.display = 'none';
     retryButton.style.display = 'none';
     settings.win = null;
@@ -114,7 +107,7 @@ function playGame() {
         x.className = 'tile';
     });
 
-    const url = 'https://random-word-api.herokuapp.com/word?number=1';
+    const url = 'https://random-word-api.vercel.app/api?words=1';
     fetch(url)
     .then((response) => {
         return response.json();
@@ -134,31 +127,35 @@ function playGame() {
         const wordArray = settings.word.split("");
 
         window.addEventListener("keydown", (event) => {
-            try {
-            let key = event.key.toString();
-            if (word.includes(key)) {
-                document.getElementById(key).className = 'tile pressedRight';
-                for (let i = 0; i < settings.word.length; i += 1) {
-                    if (wordArray[i] === key) {
-                    string[i] = key;
-                    wordContainer.innerHTML = string.join(" "); 
-                    }
-                };
-            } else if (document.getElementById(key).classList.contains('pressedRight') || document.getElementById(key).classList.contains('pressedWrong')) {
+            if (endText.style.display === 'block') {
+
             } else {
-                document.getElementById(key).className = 'tile pressedWrong';
-                settings.wrongCounter += 1;
+                try {
+                let key = event.key.toString();
+                if (word.includes(key)) {
+                    document.getElementById(key).className = 'tile pressedRight';
+                    for (let i = 0; i < settings.word.length; i += 1) {
+                        if (wordArray[i] === key) {
+                        string[i] = key;
+                        wordContainer.innerHTML = string.join(" "); 
+                        }
+                    };
+                } else if (document.getElementById(key).classList.contains('pressedRight') || document.getElementById(key).classList.contains('pressedWrong')) {
+                } else {
+                    document.getElementById(key).className = 'tile pressedWrong';
+                    settings.wrongCounter += 1;
+                }
+                if (settings.wrongCounter >= 6) {
+                    settings.win = false;
+                    gameOver();
+                };
+                if (!string.includes("_")) {
+                    settings.win = true;
+                    gameOver();
+                }
+                updateAsciiArt();
+                } catch(err) {};
             }
-            if (settings.wrongCounter >= 6) {
-                settings.win = false;
-                gameOver();
-            };
-            updateAsciiArt();
-            if (!string.includes("_")) {
-                settings.win = true;
-                gameOver();
-            }
-            } catch(err) {};
         });
 
 
@@ -170,6 +167,7 @@ function playGame() {
 }
 
 function gameOver() {
+    getDefinition();
     hangmanContainer.style.display = 'flex';
     tiles.forEach((x) => {
         x.style.display = 'none';
@@ -181,6 +179,14 @@ function gameOver() {
         settings.streak += 1;
         endText.innerHTML = 'You win!';
     } else {
+        hangmanDiv.innerHTML = hangmanAsciiArt[0] + "<br>";
+        hangmanDiv.innerHTML += hangmanAsciiArt[1] + "<br>";
+        hangmanDiv.innerHTML += hangmanAsciiArt[2] + "<br>";
+        hangmanDiv.innerHTML += hangmanAsciiArt[3] + "<br>";
+        hangmanDiv.innerHTML += hangmanAsciiArt[4] + "<br>";
+        hangmanDiv.innerHTML += hangmanAsciiArt[5] + "<br>";
+        hangmanDiv.innerHTML += hangmanAsciiArt[6] + "<br>";
+        hangmanDiv.innerHTML += hangmanAsciiArt[7] + "<br>";
         wordContainer.innerHTML = settings.word;
         settings.streak = 0;
         endText.innerHTML = 'You lose!';
@@ -200,3 +206,27 @@ function gameOver() {
 
 playButton.addEventListener("click", playGame);
 retryButton.addEventListener("click", playGame);
+
+function getDefinition() {
+    definitionDisplay.innerHTML = '';
+    let url = ` https://api.dictionaryapi.dev/api/v2/entries/en/${settings.word}`;
+    fetch(url)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        for (let i = 0; i < data[0].meanings.length; i += 1) {
+            let pos = data[0].meanings[i].partOfSpeech;
+            let def = [];
+            for (let j = 0; j < data[0].meanings[i].definitions.length; j += 1) {
+                def.push(data[0].meanings[i].definitions[j].definition);
+            };
+            definitionDisplay.innerHTML += `${settings.word} - ${pos}: ${def.join(" / ")} <br><br>`;
+        };
+    })
+    .catch(() => {
+        definitionDisplay.innerHTML = 'Something went wrong while fetching API (most likely no definition).';
+        throw new Error('Something went wrong while fetching API.');
+    });
+    definitionDisplay.style.display = 'block';
+}
