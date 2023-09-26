@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+}
+
+@media (orientation: portrait) {
+
+html {
+    background: #f8c2a6;
+}
+
+#grad {
+    background-image: linear-gradient(#e8d8d8 , #f8c2a6);
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Chivo', sans-serif;
+    font-size: 15vw;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Chivo', sans-serif;
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+
+p {
+    font-size: 0.9rem;
+    text-align: center;
+    font-family: 'Chivo', sans-serif;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+#gamesContainer {
+    margin: 0 auto;
+    height: 305vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: background-color 1s;
+}
+
+.game {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 0.4166vh 0.3125vw;
+    font-size: 1.4814vh;
+    margin: 0% 10%;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 65vh;
+}
+
+.game img {
+    width: 75%;
+    height: 38%;
+}
+
+.mobileIcon {
+    display: block !important;
+}
+
+.topSpacer {
+    margin-bottom: 12vh;
+    background-color: #e8d8d8;
+    border: 1px solid #e8d8d8;
+}
+
+.bottomSpacer {
+    margin-top: 5vh;
+    background-color: #f8c2a6;
+    border: 1px solid #f8c2a6;
+}
+
+}
+
+
+
+
+
+@media (orientation: landscape) {
+
+html {
+    background: #f8c2a6;
+}
+
+.computerImg {
+    margin-left: 1vw;
+}
+
+#grad {
+    background-image: linear-gradient(#e8d8d8 , #f8c2a6);
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Chivo', sans-serif;
+    font-size: 4vw;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+
+h2 {
+    font-size: 2vw;
+    text-align: center;
+    font-family: 'Chivo', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1vw;
+    text-align: center;
+    font-family: 'Chivo', sans-serif;
+    margin-right: 5%;
+}
+
+#gamesContainer {
+    margin: 0 auto;
+    height: 150vh;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: background-color 1s;
+}
+
+.game {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 0.4166vh 0.3125vw;
+    font-size: 1.4814vh;
+    margin: 2% 10%;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: border 1s;
+    display: flex;
+    align-items: center;
+    width: 60vw;
+    height: 25vh;
+}
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #e4bcdb;
+  cursor: pointer;
+  color: #e4bcdb;   
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+.draw-border:hover {
+  color: #f164d0;
+}
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #f164d0;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+.draw-border:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+
+.game img {
+    width: 10vw;
+    height: 15vh;
+    float: left;
+}
+
+.topSpacer {
+    margin-bottom: 15vh;
+    background-color: #e8d8d8;
+    border: 1px solid #e8d8d8;
+}
+
+.bottomSpacer {
+    margin-top: 5vh;
+    background-color: #f8c2a6;
+    border: 1px solid #f8c2a6;
+}
+
+}

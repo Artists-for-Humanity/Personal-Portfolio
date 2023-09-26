@@ -80,12 +80,8 @@ nav a {
     opacity: 0.5;
 }
 
-#navHome:hover, #navResume:hover, #navAbout:hover, #navGames:hover/*, #navProjects:hover*/ {
+#navHome:hover, #navResume:hover, #navAbout:hover, #navGames:hover, #navProjects:hover {
     color: lightpink;
-    opacity: 0.5;
-}
-
-#navProjects {
     opacity: 0.5;
 }
 
