@@ -234,7 +234,7 @@ function gameOver() {
     retryButton.style.display = 'block';
 
     if (settings.win === true) {
-        settings.streak += 1;
+        settings.streak += (6-settings.wrongCounter)*100;
         endText.innerHTML = 'You win!';
         settings.correctWords.push(settings.word);
         document.getElementById('correctWords').innerHTML = settings.correctWords.join(" <br> ");
