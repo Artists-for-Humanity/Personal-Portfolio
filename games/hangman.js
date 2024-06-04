@@ -7,6 +7,7 @@ const hangmanDiv = document.querySelector(".ascii-art");
 const endText = document.getElementById('endText');
 const retryButton = document.getElementById('retryButton');
 const definitionDisplay = document.getElementById('definitionDisplay');
+const hints = document.getElementById("hints");
 
 const settings = {
     word: '',
@@ -166,6 +167,12 @@ try {
         settings.win = false;
         gameOver();
     };
+    if (settings.wrongCounter == 5) {
+        getDefinition(1);
+    }
+    if (settings.wrongCounter == 3) {
+        getDefinition(0);
+    }
     if (!settings.string.includes("_")) {
         settings.win = true;
         gameOver();
@@ -196,6 +203,12 @@ function tileClicked(event) {
             settings.win = false;
             gameOver();
         };
+        if (settings.wrongCounter == 5) {
+            getDefinition(1);
+        }
+        if (settings.wrongCounter == 3) {
+            getDefinition(0);
+        }
         if (!settings.string.includes("_")) {
             settings.win = true;
             gameOver();
@@ -248,21 +261,27 @@ function gameOver() {
 playButton.addEventListener("click", playGame);
 retryButton.addEventListener("click", playGame);
 
-function getDefinition() {
-    definitionDisplay.innerHTML = '';
+function getDefinition(condition) {
     let url = ` https://api.dictionaryapi.dev/api/v2/entries/en/${settings.word}`;
     fetch(url)
     .then((response) => {
         return response.json();
     })
     .then((data) => {
+        definitionDisplay.innerHTML = '';
         for (let i = 0; i < data[0].meanings.length; i += 1) {
             let pos = data[0].meanings[i].partOfSpeech;
             let def = [];
             for (let j = 0; j < data[0].meanings[i].definitions.length; j += 1) {
                 def.push(data[0].meanings[i].definitions[j].definition);
             };
-            definitionDisplay.innerHTML += `${settings.word} - ${pos}: ${def.join(" / ")} <br><br>`;
+            if (condition == 0) {
+                definitionDisplay.innerHTML += `${pos} <br><br>`;
+            } else if (condition == 1) {
+                definitionDisplay.innerHTML += `${pos}: ${def.join(" / ")} <br><br>`;
+            } else {
+                definitionDisplay.innerHTML += `${settings.word} - ${pos}: ${def.join(" / ")} <br><br>`;
+            }
         };
     })
     .catch(() => {
