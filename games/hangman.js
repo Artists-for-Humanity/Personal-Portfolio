@@ -234,9 +234,10 @@ function gameOver() {
     retryButton.style.display = 'block';
 
     if (settings.win === true) {
-        settings.streak += (6-settings.wrongCounter)*100;
+        let points = (6-settings.wrongCounter)*100
+        settings.streak += points;
         endText.innerHTML = 'You win!';
-        settings.correctWords.push(settings.word);
+        settings.correctWords.push(settings.word + " +" + points);
         document.getElementById('correctWords').innerHTML = settings.correctWords.join(" <br> ");
     } else {
         hangmanDiv.innerHTML = hangmanAsciiArt[0] + "<br>";

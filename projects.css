@@ -72,6 +72,8 @@ p {
 .game img {
     width: 75%;
     height: 38%;
+    border-radius: 50%;
+    margin-bottom: 3vh;
 }
 
 .mobileIcon {
@@ -103,7 +105,9 @@ html {
 }
 
 .computerImg {
-    margin-left: 1vw;
+    margin-left: 2vw;
+    border-radius: 50%;
+    border: 5px dotted;
 }
 
 #grad {
